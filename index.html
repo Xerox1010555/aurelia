@@ -1,0 +1,3170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-zPH9y8d0zKkYs+3ht/1JNLHbOhxlJYDHr+mhKz5O608='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self' https://open.er-api.com; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AURELIA">
+<meta property="og:title" content="AURELIA — Authorized Boutique · Haute Horlogerie in 3D">
+<meta property="og:description" content="Four legendary references, procedurally built and rendered in real-time 3D. Configure yours live.">
+<meta property="og:url" content="./">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AURELIA — Haute Horlogerie in 3D">
+<meta name="twitter:description" content="Four legendary references, procedurally built and rendered in real-time 3D.">
+<link rel="canonical" href="./">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 44'%3E%3Cg fill='none' stroke='%23c9a961' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='16' cy='9' r='3'/%3E%3Ccircle cx='36' cy='4' r='3'/%3E%3Ccircle cx='56' cy='9' r='3'/%3E%3Cpath d='M16 14 L12 32 H60 L56 14 L44 26 L36 12 L28 26 Z'/%3E%3Cpath d='M14 39 H58'/%3E%3C/g%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"AURELIA","description":"Independent concept haute horlogerie boutique — four legendary references rendered in real-time 3D.","slogan":"Time is the ultimate luxury.","currenciesAccepted":"USD, EGP, AED, SAR","address":{"@type":"PostalAddress","addressLocality":"Geneva","addressCountry":"CH"},"openingHours":"Mo-Sa 10:00-19:00"}</script>
+<meta name="description" content="AURELIA — Authorized Boutique. Four legendary references, procedurally built and rendered in real-time 3D.">
+<title>AURELIA — Authorized Boutique · Haute Horlogerie in 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AURELIA — Authorized Boutique
+   Design tokens
+============================================================ */
+:root{
+  --bg:#0a0a0a;
+  --bg-2:#0e0e0d;
+  --bg-3:#121210;
+  --ink:#f5f1e8;
+  --ink-dim:rgba(245,241,232,.56);
+  --ink-faint:rgba(245,241,232,.32);
+  --gold:#c9a961;
+  --gold-2:#e8d9ae;
+  --gold-deep:#8f7434;
+  --green:#006039;
+  --line:rgba(201,169,97,.22);
+  --line-soft:rgba(245,241,232,.10);
+  --glass:rgba(255,255,255,.035);
+  --glass-2:rgba(255,255,255,.06);
+  --shadow:rgba(0,0,0,.55);
+  --serif:'Cormorant Garamond',Didot,'Times New Roman',serif;
+  --sans:'Inter','Helvetica Neue',Arial,sans-serif;
+  --ar:'Cairo','Inter',sans-serif;
+  --ease:cubic-bezier(.19,1,.22,1);
+  --nav-h:76px;
+}
+html[data-theme="light"]{
+  --bg:#f4f0e6;
+  --bg-2:#ece7d9;
+  --bg-3:#e4dece;
+  --ink:#171512;
+  --ink-dim:rgba(23,21,18,.62);
+  --ink-faint:rgba(23,21,18,.36);
+  --gold:#9a7a2e;
+  --gold-2:#7c611f;
+  --gold-deep:#b99549;
+  --line:rgba(122,95,35,.28);
+  --line-soft:rgba(23,21,18,.12);
+  --glass:rgba(23,21,18,.035);
+  --glass-2:rgba(23,21,18,.06);
+  --shadow:rgba(60,48,20,.25);
+}
+
+/* ============================================================
+   Reset & base
+============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font:400 16px/1.65 var(--sans);
+  overflow-x:hidden;
+  min-height:100vh;
+  transition:background .6s ease,color .6s ease;
+}
+body::before{ /* ambient vignette behind everything */
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(120% 90% at 50% 8%, rgba(201,169,97,.05), transparent 55%),
+    radial-gradient(100% 100% at 50% 100%, rgba(0,96,57,.06), transparent 60%);
+}
+html[data-theme="light"] body::before{opacity:.5}
+img,svg{display:block;max-width:100%}
+button,input,select{font:inherit;color:inherit;background:none;border:none}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:var(--gold);color:#0a0a0a}
+:focus{outline:none}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--gold-deep),var(--gold));border-radius:8px;border:2px solid var(--bg)}
+html{scrollbar-width:thin;scrollbar-color:var(--gold-deep) var(--bg)}
+
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;top:-60px;inset-inline-start:16px;z-index:300;background:var(--gold);color:#0a0a0a;padding:10px 18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:top .3s}
+.skip:focus{top:14px}
+
+/* Arabic typography */
+html[lang="ar"] body{font-family:var(--ar)}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4{font-family:var(--ar);letter-spacing:0!important;line-height:1.35}
+html[lang="ar"] .eyebrow,html[lang="ar"] .btn,html[lang="ar"] .w-ref,html[lang="ar"] .c-num{letter-spacing:.06em}
+
+/* ============================================================
+   Custom cursor
+============================================================ */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;z-index:400;pointer-events:none;border-radius:50%;opacity:0;will-change:transform}
+.cursor-dot{width:5px;height:5px;background:var(--gold);margin:-2.5px 0 0 -2.5px}
+.cursor-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid var(--gold);transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s,border-color .35s}
+.cursor-ring.is-hover{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(201,169,97,.08);border-color:var(--gold-2)}
+.cursor-ring.is-down{width:26px;height:26px;margin:-13px 0 0 -13px}
+html.has-cursor body{cursor:none}
+html.has-cursor a,html.has-cursor button,html.has-cursor select,html.has-cursor input,html.has-cursor label,html.has-cursor #dragZone{cursor:none}
+
+/* ============================================================
+   WebGL canvas layer + static fallback art
+============================================================ */
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;opacity:0;transition:opacity 1.4s ease}
+#gl.on{opacity:1}
+#fallbackArt{display:none;position:absolute;inset:0;z-index:1;align-items:center;justify-content:center;pointer-events:none}
+html.no-webgl #gl{display:none}
+html.no-webgl #fallbackArt{display:flex}
+#fallbackArt svg{width:min(46vh,300px);filter:drop-shadow(0 30px 60px rgba(0,0,0,.6));animation:floatY 7s ease-in-out infinite}
+@keyframes floatY{0%,100%{transform:translateY(-10px) rotate(-2deg)}50%{transform:translateY(12px) rotate(2deg)}}
+
+/* ============================================================
+   Preloader
+============================================================ */
+#preloader{position:fixed;inset:0;z-index:100;background:#050505;display:flex;align-items:center;justify-content:center;color:#f5f1e8}
+html[data-theme="light"] #preloader{background:#050505}
+#preloader.done{display:none}
+.pre-inner{display:flex;flex-direction:column;align-items:center;gap:26px}
+.pre-crown{width:58px;color:var(--gold);opacity:0}
+.pre-ring{position:relative;width:132px;height:132px;display:flex;align-items:center;justify-content:center}
+.pre-ring svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.pr-bg{fill:none;stroke:rgba(201,169,97,.15);stroke-width:1.5}
+.pr-fg{fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-dasharray:339.3;stroke-dashoffset:339.3}
+#prePct{font:500 15px/1 var(--sans);letter-spacing:.1em;color:#f5f1e8;font-variant-numeric:tabular-nums}
+.pre-brand{font:400 13px/1.4 var(--sans);letter-spacing:.5em;text-transform:uppercase;color:rgba(245,241,232,.6)}
+.pre-brand em{display:block;font:italic 500 17px/1.4 var(--serif);letter-spacing:.28em;color:var(--gold);text-transform:none;margin-top:6px}
+
+/* ============================================================
+   Navigation
+============================================================ */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(18px,4vw,48px);
+  transition:background .5s ease,border-color .5s ease,backdrop-filter .5s ease,height .5s ease;
+  border-bottom:1px solid transparent;
+}
+#nav.scrolled{background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom-color:var(--line-soft);height:62px}
+.brand{display:flex;align-items:center;gap:12px;z-index:3}
+.brand .crown{width:30px;color:var(--gold)}
+.brand span{font:500 17px/1 var(--serif);letter-spacing:.42em;text-transform:uppercase;padding-inline-start:2px}
+html[lang="ar"] .brand span{font-family:var(--ar);letter-spacing:.14em}
+.nav-links{display:flex;gap:clamp(18px,3vw,42px)}
+.nav-links a{position:relative;font:500 11px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--ink-dim);padding:8px 2px;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;bottom:2px;inset-inline-start:0;width:0;height:1px;background:var(--gold);transition:width .45s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-tools{display:flex;align-items:center;gap:14px;z-index:3}
+.nav-chip{font:500 11px/1 var(--sans);letter-spacing:.16em;color:var(--ink-dim);border:1px solid var(--line);padding:8px 13px;transition:.3s;text-transform:uppercase}
+.nav-chip:hover{color:var(--ink);border-color:var(--gold)}
+.cur-wrap{position:relative}
+.cur-wrap::after{content:"";position:absolute;inset-inline-end:10px;top:50%;width:6px;height:6px;border-inline-end:1px solid var(--gold);border-bottom:1px solid var(--gold);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+#currencySel{appearance:none;-webkit-appearance:none;font:500 11px/1 var(--sans);letter-spacing:.14em;color:var(--ink-dim);border:1px solid var(--line);padding:8px 26px 8px 12px;background:transparent;transition:.3s}
+#currencySel option{background:var(--bg-2);color:var(--ink)}
+#currencySel:hover{color:var(--ink);border-color:var(--gold)}
+html[dir="rtl"] #currencySel{padding:8px 12px 8px 26px}
+#themeBtn{width:34px;height:34px;display:grid;place-items:center;color:var(--ink-dim);border:1px solid transparent;transition:.3s}
+#themeBtn:hover{color:var(--gold);border-color:var(--line)}
+#themeBtn svg{width:16px;height:16px}
+.cart-btn{position:relative;display:flex;align-items:center;gap:9px;color:var(--ink-dim);transition:color .3s;padding:6px 2px}
+.cart-btn:hover{color:var(--gold)}
+.cart-btn svg{width:19px;height:19px}
+.cart-count{min-width:19px;height:19px;padding:0 5px;display:grid;place-items:center;background:var(--gold);color:#0a0a0a;font:600 10px/1 var(--sans);border-radius:10px;transform:scale(0);transition:transform .4s var(--ease)}
+.cart-count.show{transform:scale(1)}
+.cart-count.pulse{animation:cartPulse .5s var(--ease)}
+@keyframes cartPulse{40%{transform:scale(1.45)}}
+.burger{display:none;flex-direction:column;gap:6px;padding:8px 4px}
+.burger span{width:24px;height:1px;background:var(--ink);transition:.4s var(--ease)}
+.burger.open span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.burger.open span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+
+/* Mobile menu */
+#mobileMenu{position:fixed;inset:0;z-index:49;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);display:flex;flex-direction:column;justify-content:center;padding:0 10vw;gap:6px;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility 0s .5s}
+#mobileMenu.open{opacity:1;visibility:visible;transition:opacity .5s ease}
+#mobileMenu a{font:400 clamp(2rem,8vw,3rem)/1.5 var(--serif);color:var(--ink);opacity:0;transform:translateY(24px);transition:.6s var(--ease);display:flex;align-items:baseline;gap:16px}
+#mobileMenu a i{font:500 11px/1 var(--sans);letter-spacing:.2em;color:var(--gold);font-style:normal}
+#mobileMenu.open a{opacity:1;transform:none}
+#mobileMenu .mm-tools{margin-top:34px;display:flex;gap:12px;align-items:center;opacity:0;transition:.6s .25s var(--ease)}
+#mobileMenu.open .mm-tools{opacity:1}
+
+/* ============================================================
+   Shared section grammar
+============================================================ */
+.sec{position:relative}
+.sec-content{position:relative;z-index:3;max-width:1360px;margin:0 auto;padding-inline:clamp(20px,5vw,72px)}
+.eyebrow{display:flex;align-items:center;gap:14px;font:500 11px/1 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--gold);flex:none}
+.h2{font:400 clamp(2.4rem,5.4vw,4.6rem)/1.06 var(--serif);letter-spacing:.01em;margin-top:22px}
+.h2 em{font-style:italic;color:var(--gold)}
+.sec-sub{max-width:52ch;color:var(--ink-dim);margin-top:18px;font-weight:300}
+.sec-head{padding-top:clamp(90px,13vh,150px)}
+.glass{background:var(--glass);border:1px solid var(--line-soft);backdrop-filter:blur(16px) saturate(1.15);-webkit-backdrop-filter:blur(16px) saturate(1.15)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--gold);color:var(--ink);font:500 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;padding:17px 34px;overflow:hidden;transition:color .45s var(--ease),border-color .45s;isolation:isolate;background:transparent}
+.btn::before{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:var(--origin-x,left);transition:transform .5s var(--ease);z-index:-1}
+html[dir="rtl"] .btn::before{transform-origin:right}
+.btn:hover{color:#0c0b09}
+.btn:hover::before{transform:scaleX(1)}
+.btn-solid{background:var(--gold);color:#0c0b09}
+.btn-solid::before{background:var(--gold-2)}
+.btn-solid:hover{color:#0c0b09}
+.link{color:var(--gold);font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--line);padding-bottom:5px;transition:.3s}
+.link:hover{color:var(--gold-2);border-color:var(--gold-2)}
+
+/* reveal utilities */
+.rv{opacity:0;transform:translateY(38px)}
+html.no-anim .rv{opacity:1;transform:none}
+.lm{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.li{display:block;will-change:transform}
+html.no-anim .li{transform:none!important}
+
+/* ============================================================
+   Hero
+============================================================ */
+#hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:calc(var(--nav-h) + 4vh) 0 5vh;overflow:hidden}
+.hero-title{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;text-align:center;pointer-events:none;padding-top:2vh}
+.hero-title h1{font:300 clamp(3.2rem,11vw,10.4rem)/1.04 var(--serif);letter-spacing:.02em;color:var(--ink)}
+.hero-title .li.gold-it{font-style:italic;font-weight:500}
+.gold-text{background:linear-gradient(100deg,var(--gold-deep) 0%,var(--gold-2) 38%,var(--gold) 62%,var(--gold-2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-ui{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding-inline:clamp(20px,5vw,72px)}
+.hero-eyebrow-row{display:flex;justify-content:center}
+.hero-eyebrow-row .eyebrow::after{content:"";width:36px;height:1px;background:var(--gold)}
+.hero-sub{max-width:44ch;text-align:center;margin:0 auto;color:var(--ink-dim);font-weight:300;font-size:15px}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.hero-model{display:flex;flex-direction:column;gap:6px;border-inline-start:1px solid var(--line);padding-inline-start:18px}
+.hero-model b{font:500 12px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase}
+.hero-model span{font:italic 400 15px/1 var(--serif);color:var(--gold-2)}
+.scroll-cue{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--ink-faint);font:500 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase}
+.scroll-cue i{width:1px;height:52px;background:var(--line-soft);position:relative;overflow:hidden;display:block}
+.scroll-cue i::after{content:"";position:absolute;top:-40%;left:0;width:100%;height:40%;background:var(--gold);animation:cueDrop 2.2s var(--ease) infinite}
+@keyframes cueDrop{0%{top:-40%}70%,100%{top:110%}}
+#dragZone{position:absolute;z-index:4;left:50%;top:50%;width:min(64vw,560px);height:min(56vh,520px);transform:translate(-50%,-52%);touch-action:pan-y;cursor:grab;border-radius:50%}
+html[lang="ar"] #dragZone{cursor:grab}
+#dragZone:active{cursor:grabbing}
+
+/* ============================================================
+   Story (scroll choreography)
+============================================================ */
+#story{height:560vh}
+.story-rail{position:sticky;top:0;height:0;z-index:3;display:flex;justify-content:flex-end;padding-inline-end:3.2vw}
+.story-rail i{position:relative;width:1px;height:38vh;background:var(--line-soft);display:block;margin-top:31vh}
+.story-rail i b{position:absolute;top:0;left:-2.5px;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px rgba(201,169,97,.8)}
+.callout{position:absolute;z-index:3;max-width:340px;opacity:0}
+.callout .c-num{font:italic 400 15px/1 var(--serif);color:var(--gold);display:block;margin-bottom:14px}
+.callout h3{font:400 clamp(1.5rem,2.4vw,2.1rem)/1.2 var(--serif);margin-bottom:12px}
+.callout h3::after{content:"";display:block;width:44px;height:1px;background:var(--gold);margin-top:16px}
+.callout p{color:var(--ink-dim);font-size:14.5px;font-weight:300}
+.callout.c-left{inset-inline-start:clamp(20px,7vw,120px)}
+.callout.c-right{inset-inline-end:clamp(20px,7vw,120px);text-align:end}
+.callout.c-right h3::after{margin-inline-start:auto}
+.callout[data-step="1"]{top:9%}
+.callout[data-step="2"]{top:30%}
+.callout[data-step="3"]{top:52%}
+.callout[data-step="4"]{top:73%}
+/* ============================================================
+   Collection
+============================================================ */
+#collection{padding-bottom:clamp(90px,12vh,150px)}
+.col-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:56px}
+@media(min-width:901px){
+  .col-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,auto);margin-inline-start:auto;max-width:56%;gap:22px}
+}
+.w-card{position:relative;text-align:start;padding:26px 26px 22px;display:flex;flex-direction:column;gap:18px;transition:transform .55s var(--ease),border-color .45s,box-shadow .55s;isolation:isolate}
+.w-card:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 30px 60px -30px var(--shadow)}
+.w-card.active{border-color:var(--gold)}
+.w-card.active::after{content:"";position:absolute;top:0;inset-inline-start:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+html[dir="rtl"] .w-card.active::after{background:linear-gradient(-90deg,transparent,var(--gold),transparent)}
+.w-card .mini{margin:4px auto 0}
+.w-info{display:flex;flex-direction:column;gap:5px;border-top:1px solid var(--line-soft);padding-top:16px}
+.w-ref{font:500 10px/1 var(--sans);letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+.w-name{font:400 1.7rem/1.1 var(--serif)}
+html[lang="ar"] .w-name{font-family:var(--ar);font-weight:700}
+.w-spec{font-size:12.5px;color:var(--ink-dim);letter-spacing:.04em}
+.w-price{font:500 14px/1 var(--sans);color:var(--gold-2);margin-top:8px;font-variant-numeric:tabular-nums}
+.w-actions{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.w-view{padding:12px 22px;font-size:10px}
+.w-add{width:40px;height:40px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-dim);transition:.35s;flex:none}
+.w-add:hover{border-color:var(--gold);color:var(--gold);transform:rotate(90deg)}
+.w-add svg{width:14px;height:14px}
+
+/* CSS mini watch (used in cards, configurator preview, cart, fallback) */
+.mini{--ms:118px;position:relative;width:var(--ms);height:var(--ms);border-radius:50%;flex:none;
+  background:
+    radial-gradient(circle at 32% 28%, color-mix(in srgb,var(--bez,#15181d) 60%, #fff 8%), transparent 60%),
+    conic-gradient(from 30deg, var(--bez,#15181d) 0 25deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 25deg 30deg, var(--bez,#15181d) 30deg 55deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 55deg 60deg, var(--bez,#15181d) 60deg 85deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 85deg 90deg, var(--bez,#15181d) 90deg 115deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 115deg 120deg, var(--bez,#15181d) 120deg 145deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 145deg 150deg, var(--bez,#15181d) 150deg 175deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 175deg 180deg, var(--bez,#15181d) 180deg 205deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 205deg 210deg, var(--bez,#15181d) 210deg 235deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 235deg 240deg, var(--bez,#15181d) 240deg 265deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 265deg 270deg, var(--bez,#15181d) 270deg 295deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 295deg 300deg, var(--bez,#15181d) 300deg 325deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 325deg 330deg, var(--bez,#15181d) 330deg 355deg, color-mix(in srgb,var(--bez,#15181d) 72%, #fff) 355deg 360deg);
+  padding:9%;
+  box-shadow:0 18px 40px -18px var(--shadow), inset 0 0 0 1px rgba(255,255,255,.06);
+}
+html[data-theme="light"] .mini{box-shadow:0 18px 40px -18px var(--shadow), inset 0 0 0 1px rgba(0,0,0,.08)}
+.mini::before{ /* dial */
+  content:"";position:absolute;inset:12%;border-radius:50%;
+  background:
+    radial-gradient(circle at 34% 30%, rgba(255,255,255,.16), transparent 55%),
+    radial-gradient(circle at 50% 50%, var(--dial,#101014) 58%, color-mix(in srgb,var(--dial,#101014) 62%, #000) 100%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+}
+.mini::after{ /* crown nub */
+  content:"";position:absolute;top:50%;inset-inline-end:-5%;width:7%;height:9%;transform:translateY(-50%);
+  background:var(--hands,#d8d8dc);border-radius:2px;box-shadow:inset 0 0 2px rgba(0,0,0,.5)}
+.mini i{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;border-radius:2px;z-index:2}
+.mini .mh{width:4.5%;height:24%;margin-left:-2.25%;background:var(--hands,#d8d8dc);transform:rotate(var(--ah,300deg))}
+.mini .mm{width:3.4%;height:34%;margin-left:-1.7%;background:var(--hands,#d8d8dc);transform:rotate(var(--am,54deg))}
+.mini .ms{width:1.4%;height:38%;margin-left:-.7%;background:var(--accent,#c9a961);transform:rotate(var(--as,20deg))}
+.mini i::after{content:"";position:absolute;top:calc(100% + 1px);left:50%;width:9%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:var(--accent,#c9a961)}
+.mini.mini--panda::before{background:
+  radial-gradient(circle at 50% 30%, var(--sub,#141419) 0 11%, transparent 11.5%),
+  radial-gradient(circle at 50% 70%, var(--sub,#141419) 0 11%, transparent 11.5%),
+  radial-gradient(circle at 30% 50%, var(--sub,#141419) 0 11%, transparent 11.5%),
+  radial-gradient(circle at 50% 50%, var(--dial,#ece9e2) 58%, color-mix(in srgb,var(--dial,#ece9e2) 62%, #000) 100%)}
+.mini.mini--sm{--ms:52px}
+.mini.mini--lg{--ms:190px}
+
+/* ============================================================
+   Configurator
+============================================================ */
+#configurator{padding-block:clamp(90px,12vh,150px)}
+.cfg-wrap{display:grid;grid-template-columns:1fr;gap:30px}
+@media(min-width:901px){.cfg-wrap{grid-template-columns:minmax(360px,44%) 1fr}}
+.cfg-panel{padding:clamp(24px,3vw,40px)}
+.cfg-panel .h2{margin-top:14px;font-size:clamp(1.9rem,3vw,2.6rem)}
+.cfg-preview{display:flex;justify-content:center;margin:26px 0 8px}
+.cfg-groups{display:flex;flex-direction:column;gap:22px;margin-top:18px}
+.cfg-label{font:500 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;display:flex;justify-content:space-between}
+.cfg-label b{color:var(--gold);font-weight:500;letter-spacing:.1em;text-transform:none}
+.cfg-opts{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-soft);padding:10px 15px;font:500 11px/1 var(--sans);letter-spacing:.1em;color:var(--ink-dim);transition:.35s;text-transform:uppercase}
+.chip:hover{border-color:var(--gold);color:var(--ink)}
+.chip[aria-pressed="true"]{border-color:var(--gold);color:var(--gold-2);background:rgba(201,169,97,.07)}
+.chip .sw{width:15px;height:15px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18), inset -2px -3px 5px rgba(0,0,0,.45)}
+.cfg-foot{margin-top:30px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-direction:column;gap:18px}
+.cfg-price{display:flex;align-items:baseline;justify-content:space-between}
+.cfg-price span{font:500 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint)}
+.cfg-price strong{font:400 clamp(1.8rem,3vw,2.4rem)/1 var(--serif);color:var(--gold-2);font-variant-numeric:tabular-nums}
+.cfg-meta{display:flex;justify-content:space-between;gap:14px;font-size:11.5px;color:var(--ink-dim);letter-spacing:.05em}
+#cfgAdd{width:100%}
+.cfg-stage{min-height:40vh}
+@media(min-width:901px){.cfg-stage{min-height:78vh}}
+
+/* ============================================================
+   Craft / specs
+============================================================ */
+#craft{padding-block:clamp(90px,12vh,160px)}
+.counters{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-soft);margin-top:60px;border:1px solid var(--line-soft)}
+@media(min-width:901px){.counters{grid-template-columns:repeat(4,1fr)}}
+.counter{background:var(--bg);padding:clamp(26px,3.4vw,46px) clamp(18px,2.4vw,36px);display:flex;flex-direction:column;gap:10px}
+html[data-theme="light"] .counter{background:var(--bg)}
+.counter b{font:300 clamp(2.6rem,4.6vw,4.2rem)/1 var(--serif);color:var(--gold-2);font-variant-numeric:tabular-nums}
+.counter b sup{font-size:.45em;color:var(--gold)}
+.counter span{font:500 10px/1.5 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--ink-faint)}
+.craft-rows{margin-top:clamp(50px,8vh,90px);display:grid;gap:0;border-top:1px solid var(--line-soft)}
+.c-row{display:grid;grid-template-columns:auto 1fr;gap:26px;padding:30px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+@media(min-width:901px){.c-row{grid-template-columns:110px minmax(0,42ch) 1fr}}
+.c-idx{font:italic 400 16px/1.4 var(--serif);color:var(--gold)}
+.c-row h4{font:400 1.35rem/1.3 var(--serif)}
+.c-row p{color:var(--ink-dim);font-size:14px;font-weight:300;max-width:52ch;margin-top:8px}
+@media(min-width:901px){.c-row p{grid-column:3;margin-top:0}}
+
+/* ============================================================
+   Testimonials
+============================================================ */
+#testimonials{padding-block:clamp(90px,12vh,160px)}
+.t-grid{display:grid;gap:18px;margin-top:56px}
+@media(min-width:901px){.t-grid{grid-template-columns:repeat(3,1fr);gap:22px}}
+.t-card{padding:34px 30px;display:flex;flex-direction:column;gap:20px;transition:transform .5s var(--ease),border-color .4s}
+.t-card:hover{transform:translateY(-6px);border-color:var(--line)}
+.t-card blockquote{font:italic 400 1.22rem/1.55 var(--serif);flex:1}
+.t-stars{color:var(--gold);letter-spacing:.35em;font-size:12px}
+.t-card figcaption{font:500 11px/1.6 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim)}
+.t-card figcaption span{color:var(--gold)}
+
+/* ============================================================
+   Boutiques
+============================================================ */
+#boutiques{padding-block:clamp(90px,12vh,160px)}
+.b-grid{display:grid;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);margin-top:56px}
+@media(min-width:701px){.b-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1051px){.b-grid{grid-template-columns:repeat(4,1fr)}}
+.b-card{background:var(--bg);padding:34px 28px;display:flex;flex-direction:column;gap:8px;transition:background .4s}
+.b-card:hover{background:var(--bg-2)}
+html[data-theme="light"] .b-card:hover{background:var(--bg-3)}
+.b-card h3{font:400 1.55rem/1.2 var(--serif)}
+.b-card h3 i{font-style:normal;color:var(--gold);font-size:.9rem;vertical-align:super;margin-inline-start:6px}
+.b-addr{color:var(--ink-dim);font-size:13.5px}
+.b-hours{color:var(--ink-faint);font-size:12px;letter-spacing:.06em;margin-bottom:14px}
+.b-card .link{align-self:flex-start;margin-top:auto}
+
+/* ============================================================
+   Newsletter
+============================================================ */
+#newsletter{padding-block:clamp(80px,10vh,140px)}
+.news-inner{border-block:1px solid var(--line-soft);padding-block:clamp(50px,7vh,80px);display:grid;gap:34px;text-align:center;align-items:center}
+@media(min-width:901px){.news-inner{grid-template-columns:1.1fr 1fr;text-align:start}}
+.news-inner .h2{margin-top:16px}
+.news-form{display:flex;gap:12px;align-items:stretch;justify-content:center;flex-wrap:wrap}
+.news-form input{flex:1;min-width:230px;background:transparent;border:0;border-bottom:1px solid var(--line);padding:14px 6px;color:var(--ink);letter-spacing:.04em;transition:border-color .3s;font-weight:300}
+.news-form input::placeholder{color:var(--ink-faint)}
+.news-form input:focus{border-color:var(--gold)}
+
+/* ============================================================
+   Footer
+============================================================ */
+#footer{border-top:1px solid var(--line-soft);padding-top:clamp(56px,8vh,90px);background:linear-gradient(180deg,transparent,rgba(201,169,97,.03))}
+.foot-grid{display:grid;gap:44px;padding-bottom:56px}
+@media(min-width:901px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.f-brand .crown{width:40px;color:var(--gold);margin-bottom:18px}
+.f-brand p{font:italic 400 1.25rem/1.5 var(--serif);color:var(--ink-dim);margin-top:10px;max-width:30ch}
+.f-col h5{font:500 10px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px}
+.f-col a{display:block;padding:7px 0;color:var(--ink-dim);font-size:13.5px;transition:.3s}
+.f-col a:hover{color:var(--gold);padding-inline-start:6px}
+.foot-base{border-top:1px solid var(--line-soft);padding-block:26px;display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between;font-size:11.5px;color:var(--ink-faint);letter-spacing:.04em}
+
+/* ============================================================
+   Cart drawer
+============================================================ */
+#cartBackdrop{position:fixed;inset:0;z-index:60;background:rgba(4,4,4,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:.45s}
+#cartBackdrop.open{opacity:1;visibility:visible}
+#cartDrawer{position:fixed;top:0;bottom:0;inset-inline-end:0;z-index:70;width:min(440px,94vw);background:color-mix(in srgb,var(--bg-2) 94%,transparent);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-inline-start:1px solid var(--line-soft);display:flex;flex-direction:column;transform:translateX(105%);transition:transform .6s var(--ease)}
+html[dir="rtl"] #cartDrawer{transform:translateX(-105%)}
+#cartDrawer.open{transform:translateX(0)!important}
+.cd-head{display:flex;align-items:center;justify-content:space-between;padding:26px 28px;border-bottom:1px solid var(--line-soft)}
+.cd-head h3{font:400 1.5rem/1 var(--serif)}
+.cd-close{width:38px;height:38px;display:grid;place-items:center;color:var(--ink-dim);border:1px solid transparent;transition:.3s}
+.cd-close:hover{color:var(--ink);border-color:var(--line)}
+.cd-close svg{width:16px;height:16px}
+#cartItems{flex:1;overflow-y:auto;padding:10px 28px;display:flex;flex-direction:column}
+.cart-row{display:grid;grid-template-columns:auto 1fr auto;gap:16px;padding:20px 0;border-bottom:1px solid var(--line-soft);align-items:center;animation:rowIn .5s var(--ease)}
+@keyframes rowIn{from{opacity:0;transform:translateX(20px)}}
+.cart-row .mini{--ms:62px}
+.cr-info{display:flex;flex-direction:column;gap:4px;min-width:0}
+.cr-info b{font:500 14.5px/1.3 var(--sans);letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cr-info small{color:var(--ink-faint);font-size:11px;letter-spacing:.05em}
+.cr-price{font:500 13px/1 var(--sans);color:var(--gold-2);font-variant-numeric:tabular-nums}
+.cr-qty{display:flex;align-items:center;gap:2px;border:1px solid var(--line-soft);margin-top:10px;width:max-content}
+.cr-qty button{width:26px;height:26px;display:grid;place-items:center;color:var(--ink-dim);transition:.25s;font-size:14px}
+.cr-qty button:hover{color:var(--gold)}
+.cr-qty span{min-width:24px;text-align:center;font:500 12px/1 var(--sans)}
+.cr-remove{color:var(--ink-faint);font-size:11px;letter-spacing:.14em;text-transform:uppercase;transition:.25s;align-self:start;padding:4px}
+.cr-remove:hover{color:#d66a5a}
+.cart-empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;color:var(--ink-dim);text-align:center;padding:30px}
+.cart-empty svg{width:44px;color:var(--gold);opacity:.6}
+.cd-foot{padding:22px 28px 30px;border-top:1px solid var(--line-soft);display:flex;flex-direction:column;gap:14px}
+.cart-total{display:flex;justify-content:space-between;align-items:baseline}
+.cart-total span{font:500 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint)}
+.cart-total strong{font:400 1.7rem/1 var(--serif);color:var(--gold-2);font-variant-numeric:tabular-nums}
+.cart-note{font-size:11.5px;color:var(--ink-faint);text-align:center;letter-spacing:.06em}
+#checkoutBtn{width:100%}
+
+/* ============================================================
+   Checkout modal
+============================================================ */
+#checkoutModal{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:18px;background:rgba(4,4,4,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:.45s}
+#checkoutModal.open{opacity:1;visibility:visible}
+.modal-card{position:relative;width:min(580px,100%);max-height:88vh;overflow-y:auto;background:color-mix(in srgb,var(--bg-2) 96%,transparent);border:1px solid var(--line-soft);padding:clamp(26px,4vw,46px);transform:translateY(26px) scale(.98);transition:transform .5s var(--ease)}
+#checkoutModal.open .modal-card{transform:none}
+.modal-close{position:absolute;top:14px;inset-inline-end:14px;width:38px;height:38px;display:grid;place-items:center;color:var(--ink-dim);transition:.3s}
+.modal-close:hover{color:var(--ink)}
+.modal-close svg{width:15px;height:15px}
+#checkoutBody h3{font:400 1.9rem/1.15 var(--serif);margin:12px 0 26px}
+.f-grid{display:grid;gap:20px}
+@media(min-width:641px){.f-grid{grid-template-columns:1fr 1fr}.f-grid .f-full{grid-column:1/-1}}
+.f-field{display:flex;flex-direction:column;gap:7px}
+.f-field label{font:500 10px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--ink-faint)}
+.f-field input,.f-field select{background:transparent;border:0;border-bottom:1px solid var(--line);padding:11px 4px;color:var(--ink);transition:border-color .3s;letter-spacing:.03em}
+.f-field input::placeholder{color:var(--ink-faint)}
+.f-field input:focus,.f-field select:focus{border-color:var(--gold)}
+.f-field input.err{border-color:#c0564a;animation:shake .4s}
+.f-field select option{background:var(--bg-2)}
+@keyframes shake{20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+/* Simulated payment method block (demo hardening — no PAN/CVC collection) */
+.f-pay{border:1px solid var(--line-soft);padding:14px 16px;background:var(--glass)}
+.f-pay label{font:500 10px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:10px}
+.pay-card{display:flex;align-items:center;gap:14px}
+.pay-card>svg{width:34px;height:34px;color:var(--gold);flex:none}
+.pay-card-t{display:flex;flex-direction:column;gap:3px;min-width:0}
+.pay-card-t b{font:500 13px/1.2 var(--sans);letter-spacing:.08em}
+.pay-card-t small{color:var(--ink-faint);font-size:11px;line-height:1.5}
+.pay-badge{margin-inline-start:auto;flex:none;font:600 10px/1 var(--sans);letter-spacing:.14em;background:var(--gold);color:#0a0a0a;padding:5px 9px;border-radius:2px}
+.f-secure{display:flex;align-items:center;gap:8px;color:var(--ink-faint);font-size:11px;letter-spacing:.1em;margin:18px 0 22px}
+.f-secure svg{width:13px;height:13px;color:var(--gold)}
+#checkoutForm .btn{width:100%}
+#orderSuccess{text-align:center;padding:30px 0 10px}
+#orderSuccess .crown{width:64px;color:var(--gold);margin:0 auto 24px;animation:successPop .8s var(--ease)}
+@keyframes successPop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+#orderSuccess h3{font:400 2rem/1.2 var(--serif);margin-bottom:12px}
+#orderSuccess p{color:var(--ink-dim);font-size:14px;font-weight:300}
+.order-no{margin:22px 0 30px!important}
+.order-no b{color:var(--gold-2);letter-spacing:.12em}
+
+/* ============================================================
+   Toast
+============================================================ */
+#toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,20px);z-index:90;background:color-mix(in srgb,var(--bg-3) 92%,transparent);border:1px solid var(--gold);color:var(--ink);padding:14px 26px;font:500 12px/1.4 var(--sans);letter-spacing:.12em;opacity:0;visibility:hidden;transition:.45s var(--ease);max-width:88vw;text-align:center;box-shadow:0 20px 50px -20px rgba(0,0,0,.7)}
+html[dir="rtl"] #toast{transform:translate(50%,20px)}
+#toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+html[dir="rtl"] #toast.show{transform:translate(50%,0)}
+
+/* ============================================================
+   Responsive
+============================================================ */
+@media(max-width:1100px){
+  .nav-links{display:none}
+}
+@media(max-width:900px){
+  #nav .cur-wrap,#nav #themeBtn{display:none}
+  .burger{display:flex}
+  #story{height:440vh}
+  .callout{max-width:min(330px,74vw);background:color-mix(in srgb,var(--bg) 62%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line-soft);padding:20px 22px}
+  .hero-foot{flex-direction:column;align-items:flex-start;gap:26px}
+  .scroll-cue{align-self:center;order:-1;flex-direction:row}
+  .scroll-cue i{width:52px;height:1px}
+  .scroll-cue i::after{width:40%;height:100%;top:0;left:-40%;animation:cueDropX 2.2s var(--ease) infinite}
+  @keyframes cueDropX{0%{left:-40%}70%,100%{left:110%}}
+}
+@media(max-width:520px){
+  .w-card{padding:20px 18px 16px}
+  .cart-btn .cart-count{position:absolute;top:-4px;inset-inline-end:-8px}
+}
+@media(min-width:901px) and (max-width:1100px){
+  .col-grid{max-width:62%}
+}
+
+/* ============================================================
+   Reduced motion / no-anim / print
+============================================================ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+html.no-anim .rv,html.no-anim .li{opacity:1!important;transform:none!important}
+.noscript{position:fixed;inset:auto 0 0 0;z-index:999;background:var(--gold);color:#0a0a0a;text-align:center;padding:14px;font-size:13px}
+body.lock{overflow:hidden}
+#cartDrawer{visibility:hidden;transition:transform .6s var(--ease),visibility 0s .65s}
+#cartDrawer.open{visibility:visible;transition:transform .6s var(--ease)}
+.w-card{cursor:pointer}
+</style>
+</head>
+<body>
+<a class="skip" href="#collection" data-i18n-aria="a11y.skip">Skip to collection</a>
+
+<!-- ═══════════════ PRELOADER ═══════════════ -->
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="pre-inner">
+    <svg class="pre-crown" viewBox="0 0 72 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+      <circle cx="16" cy="9" r="3"></circle><circle cx="36" cy="4" r="3"></circle><circle cx="56" cy="9" r="3"></circle>
+      <path d="M16 14 L12 32 H60 L56 14 L44 26 L36 12 L28 26 Z"></path>
+      <path d="M14 39 H58"></path>
+    </svg>
+    <div class="pre-ring">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="pr-bg" cx="60" cy="60" r="54"></circle>
+        <circle class="pr-fg" cx="60" cy="60" r="54"></circle>
+      </svg>
+      <span id="prePct">0</span>
+    </div>
+    <p class="pre-brand">Aurelia<em>Genève</em></p>
+  </div>
+</div>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- 3D layer -->
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<header id="nav">
+  <a class="brand" href="#hero" data-scroll aria-label="Aurelia — home">
+    <svg class="crown" viewBox="0 0 72 44" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+      <circle cx="16" cy="9" r="3"></circle><circle cx="36" cy="4" r="3"></circle><circle cx="56" cy="9" r="3"></circle>
+      <path d="M16 14 L12 32 H60 L56 14 L44 26 L36 12 L28 26 Z"></path><path d="M14 39 H58"></path>
+    </svg>
+    <span>Aurelia</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#collection" data-scroll data-i18n="nav.collection">Collection</a>
+    <a href="#configurator" data-scroll data-i18n="nav.configurator">Configurator</a>
+    <a href="#craft" data-scroll data-i18n="nav.craft">Craft</a>
+    <a href="#boutiques" data-scroll data-i18n="nav.boutiques">Boutiques</a>
+  </nav>
+  <div class="nav-tools">
+    <button id="themeBtn" aria-label="Toggle light / dark theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"></path></svg>
+    </button>
+    <button id="langBtn" class="nav-chip" aria-label="Switch language">العربية</button>
+    <label class="cur-wrap" aria-label="Currency">
+      <select id="currencySel">
+        <option value="USD">USD</option>
+        <option value="EGP">EGP</option>
+        <option value="AED">AED</option>
+        <option value="SAR">SAR</option>
+      </select>
+    </label>
+    <button id="cartBtn" class="cart-btn" aria-label="Open shopping bag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 12.2a1.8 1.8 0 0 1-1.8 1.6H8a1.8 1.8 0 0 1-1.8-1.6L5 8Z"></path><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+      <span id="cartCount" class="cart-count" aria-live="polite">0</span>
+    </button>
+    <button id="burger" class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div id="mobileMenu" aria-hidden="true">
+  <a href="#collection" data-scroll style="transition-delay:.08s"><i>01</i><span data-i18n="nav.collection">Collection</span></a>
+  <a href="#configurator" data-scroll style="transition-delay:.14s"><i>02</i><span data-i18n="nav.configurator">Configurator</span></a>
+  <a href="#craft" data-scroll style="transition-delay:.2s"><i>03</i><span data-i18n="nav.craft">Craft</span></a>
+  <a href="#boutiques" data-scroll style="transition-delay:.26s"><i>04</i><span data-i18n="nav.boutiques">Boutiques</span></a>
+  <div class="mm-tools">
+    <button id="langBtnM" class="nav-chip">العربية</button>
+    <button id="themeBtnM" class="nav-chip" data-i18n="nav.theme">Theme</button>
+  </div>
+</div>
+
+<main id="page">
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="hero" class="sec">
+    <div id="fallbackArt" aria-hidden="true">
+      <svg viewBox="0 0 200 260" fill="none" stroke="#c9a961" stroke-width="2">
+        <g opacity=".8">
+          <rect x="72" y="6" width="56" height="20" rx="8"></rect><rect x="76" y="30" width="48" height="14" rx="7"></rect>
+          <rect x="72" y="234" width="56" height="20" rx="8"></rect><rect x="76" y="216" width="48" height="14" rx="7"></rect>
+        </g>
+        <circle cx="100" cy="130" r="74" stroke-width="3"></circle>
+        <circle cx="100" cy="130" r="60" opacity=".7"></circle>
+        <circle cx="100" cy="130" r="12" opacity=".5"></circle>
+        <g stroke-width="2.4" stroke-linecap="round">
+          <path d="M100 130 L100 86"></path>
+          <path d="M100 130 L132 148"></path>
+        </g>
+        <path d="M100 130 L100 172" stroke-width="1.4" opacity=".85"></path>
+        <g opacity=".65" stroke-width="1.6">
+          <path d="M100 76 v8"></path><path d="M100 176 v8"></path><path d="M46 130 h8"></path><path d="M146 130 h8"></path>
+        </g>
+        <g stroke-width="2">
+          <rect x="178" y="120" width="14" height="20" rx="4"></rect>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-title" id="heroTitle" aria-hidden="true">
+      <h1>
+        <span class="lm"><span class="li" data-i18n="hero.t1">Time is</span></span>
+        <span class="lm"><span class="li gold-it gold-text" data-i18n="hero.t2">the ultimate</span></span>
+        <span class="lm"><span class="li" data-i18n="hero.t3">LUXURY</span></span>
+      </h1>
+    </div>
+
+    <div class="hero-ui sec-content">
+      <div class="hero-eyebrow-row"><p class="eyebrow rv" data-i18n="hero.eyebrow">Authorized Boutique · Genève</p></div>
+      <div>
+        <p class="hero-sub rv" data-i18n="hero.sub">Four legendary references, one obsession with perfection — sculpted procedurally in 3D and rendered live before your eyes.</p>
+        <div class="hero-foot">
+          <div class="hero-model rv">
+            <b id="heroModelName">Submariner</b>
+            <span id="heroModelPrice">from $14,250</span>
+          </div>
+          <div class="scroll-cue rv"><span data-i18n="hero.scroll">Scroll to explore</span><i></i></div>
+        </div>
+      </div>
+    </div>
+    <div id="dragZone" aria-hidden="true"></div>
+  </section>
+
+  <!-- ═══════════════ STORY ═══════════════ -->
+  <section id="story" class="sec" aria-label="Anatomy of the watch">
+    <div class="story-rail" aria-hidden="true"><i><b id="railDot"></b></i></div>
+
+    <article class="callout c-left" data-step="1">
+      <span class="c-num">01 —</span>
+      <h3 data-i18n="story.c1t">The Oyster Case</h3>
+      <p data-i18n="story.c1b">Hermetically sealed to 300 metres. Machined from a solid block of Oystersteel, then polished and satin-finished by hand.</p>
+    </article>
+    <article class="callout c-right" data-step="2">
+      <span class="c-num">02 —</span>
+      <h3 data-i18n="story.c2t">Superlative Chronometer</h3>
+      <p data-i18n="story.c2b">Every dial is certified to −2/+2 seconds per day — twice the precision demanded of an official chronometer.</p>
+    </article>
+    <article class="callout c-left" data-step="3">
+      <span class="c-num">03 —</span>
+      <h3 data-i18n="story.c3t">The Jubilee Bracelet</h3>
+      <p data-i18n="story.c3b">Five sculpted rows of links, born in 1945 — supple as silk, fluid as mercury, invisible on the wrist.</p>
+    </article>
+    <article class="callout c-right" data-step="4">
+      <span class="c-num">04 —</span>
+      <h3 data-i18n="story.c4t">Calibre 3235</h3>
+      <p data-i18n="story.c4b">31 jewels, 70-hour power reserve and the Chronergy escapement — fourteen patents in a whisper of mechanics.</p>
+    </article>
+  </section>
+
+  <!-- ═══════════════ COLLECTION ═══════════════ -->
+  <section id="collection" class="sec">
+    <div class="sec-head sec-content">
+      <p class="eyebrow rv" data-i18n="collection.eyebrow">The Collection</p>
+      <h2 class="h2"><span class="lm"><span class="li" data-i18n="collection.heading">Four <em>legends</em></span></span></h2>
+      <p class="sec-sub rv" data-i18n="collection.sub">Select a reference — the machine reshapes itself before your eyes, link by link.</p>
+    </div>
+    <div class="col-grid sec-content" id="collectionGrid"><!-- rendered by JS --></div>
+  </section>
+
+  <!-- ═══════════════ CONFIGURATOR ═══════════════ -->
+  <section id="configurator" class="sec">
+    <div class="cfg-wrap sec-content">
+      <div class="cfg-panel glass rv">
+        <p class="eyebrow" data-i18n="cfg.eyebrow">Configurator</p>
+        <h2 class="h2" data-i18n="cfg.heading">Compose your <em>legend</em></h2>
+        <div class="cfg-preview">
+          <div class="mini mini--lg" id="cfgMini"><i class="mh"></i><i class="mm"></i><i class="ms"></i></div>
+        </div>
+        <p class="cfg-meta"><span id="cfgName">Submariner</span><span id="cfgRef">REF. 124060</span></p>
+        <div class="cfg-groups">
+          <div class="cfg-group">
+            <p class="cfg-label"><span data-i18n="cfg.metal">Metal</span><b id="lblMetal"></b></p>
+            <div class="cfg-opts" id="optMetal" role="group" aria-label="Metal"></div>
+          </div>
+          <div class="cfg-group">
+            <p class="cfg-label"><span data-i18n="cfg.dial">Dial</span><b id="lblDial"></b></p>
+            <div class="cfg-opts" id="optDial" role="group" aria-label="Dial"></div>
+          </div>
+          <div class="cfg-group">
+            <p class="cfg-label"><span data-i18n="cfg.bezel">Bezel</span><b id="lblBezel"></b></p>
+            <div class="cfg-opts" id="optBezel" role="group" aria-label="Bezel"></div>
+          </div>
+          <div class="cfg-group">
+            <p class="cfg-label"><span data-i18n="cfg.bracelet">Bracelet</span><b id="lblBracelet"></b></p>
+            <div class="cfg-opts" id="optBracelet" role="group" aria-label="Bracelet style"></div>
+          </div>
+        </div>
+        <div class="cfg-foot">
+          <div class="cfg-price"><span data-i18n="cfg.total">Total</span><strong id="cfgPrice">$0</strong></div>
+          <button id="cfgAdd" class="btn btn-solid magnetic" data-i18n="cfg.add">Add to bag</button>
+        </div>
+      </div>
+      <div class="cfg-stage" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CRAFT ═══════════════ -->
+  <section id="craft" class="sec">
+    <div class="sec-content">
+      <div class="sec-head" style="padding-top:0">
+        <p class="eyebrow rv" data-i18n="craft.eyebrow">Craftsmanship</p>
+        <h2 class="h2"><span class="lm"><span class="li" data-i18n="craft.heading">Obsession in every <em>micron</em></span></span></h2>
+      </div>
+      <div class="counters">
+        <div class="counter rv"><b><span class="c-val" data-to="31" data-dec="0">0</span></b><span data-i18n="craft.k1">Jewels</span></div>
+        <div class="counter rv"><b><span class="c-val" data-to="70" data-dec="0">0</span></b><span data-i18n="craft.k2">Hours of reserve</span></div>
+        <div class="counter rv"><b><span class="c-val" data-to="2" data-dec="0">0</span><sup>±</sup></b><span data-i18n="craft.k3">Seconds a day</span></div>
+        <div class="counter rv"><b><span class="c-val" data-to="300" data-dec="0">0</span><sup>m</sup></b><span data-i18n="craft.k4">Water-resistant</span></div>
+      </div>
+      <div class="craft-rows">
+        <div class="c-row rv">
+          <span class="c-idx">01</span>
+          <h4 data-i18n="craft.r1t">Alloys forged in-house</h4>
+          <p data-i18n="craft.r1b">From raw ore to gleaming Oystersteel and 18 ct gold, every alloy is smelted, rolled and drawn within our own foundry — a purity no supplier can promise.</p>
+        </div>
+        <div class="c-row rv">
+          <span class="c-idx">02</span>
+          <h4 data-i18n="craft.r2t">Assembled by one pair of hands</h4>
+          <p data-i18n="craft.r2b">A single watchmaker assembles each movement, dial and case from start to finish, signing the chronometer certificate with personal pride.</p>
+        </div>
+        <div class="c-row rv">
+          <span class="c-idx">03</span>
+          <h4 data-i18n="craft.r3t">Tested beyond the certificate</h4>
+          <p data-i18n="craft.r3b">Pressure, thermal shock, magnetism and years of simulated wear — each watch leaves only after surviving a laboratory harsher than life itself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+  <section id="testimonials" class="sec">
+    <div class="sec-content">
+      <div class="sec-head" style="padding-top:0">
+        <p class="eyebrow rv" data-i18n="testi.eyebrow">Voices</p>
+        <h2 class="h2"><span class="lm"><span class="li" data-i18n="testi.heading">Owners' <em>voices</em></span></span></h2>
+      </div>
+      <div class="t-grid" id="tGrid"><!-- rendered by JS --></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ BOUTIQUES ═══════════════ -->
+  <section id="boutiques" class="sec">
+    <div class="sec-content">
+      <div class="sec-head" style="padding-top:0">
+        <p class="eyebrow rv" data-i18n="boutiques.eyebrow">Boutiques</p>
+        <h2 class="h2"><span class="lm"><span class="li" data-i18n="boutiques.heading">Visit <em>us</em></span></span></h2>
+        <p class="sec-sub rv" data-i18n="boutiques.sub">Four houses, one standard of welcome. Our concierge awaits by appointment.</p>
+      </div>
+      <div class="b-grid" id="bGrid"><!-- rendered by JS --></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ NEWSLETTER ═══════════════ -->
+  <section id="newsletter" class="sec">
+    <div class="sec-content">
+      <div class="news-inner">
+        <div>
+          <p class="eyebrow rv" style="justify-content:center" data-i18n="news.eyebrow">The private list</p>
+          <h2 class="h2 rv" data-i18n="news.title">First to the rarest references</h2>
+          <p class="sec-sub rv" style="margin-inline:0" data-i18n="news.sub">Private evenings, allocation priority and the occasional letter from Geneva. Never noise.</p>
+        </div>
+        <form id="newsForm" class="news-form rv" novalidate>
+          <label class="visually-hidden" for="newsEmail" data-i18n="news.placeholder">Your email</label>
+          <input id="newsEmail" type="email" autocomplete="email" placeholder="your@email.com" data-i18n-ph="news.placeholder">
+          <button type="submit" class="btn btn-solid magnetic" data-i18n="news.btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer id="footer">
+    <div class="foot-grid sec-content">
+      <div class="f-brand">
+        <svg class="crown" viewBox="0 0 72 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+          <circle cx="16" cy="9" r="3"></circle><circle cx="36" cy="4" r="3"></circle><circle cx="56" cy="9" r="3"></circle>
+          <path d="M16 14 L12 32 H60 L56 14 L44 26 L36 12 L28 26 Z"></path><path d="M14 39 H58"></path>
+        </svg>
+        <p data-i18n="footer.tag">Time, perfected — since a whisper of a dream in Geneva.</p>
+      </div>
+      <div class="f-col">
+        <h5 data-i18n="footer.col1">Boutique</h5>
+        <a href="#collection" data-scroll data-i18n="nav.collection">Collection</a>
+        <a href="#configurator" data-scroll data-i18n="nav.configurator">Configurator</a>
+        <a href="#boutiques" data-scroll data-i18n="nav.boutiques">Boutiques</a>
+      </div>
+      <div class="f-col">
+        <h5 data-i18n="footer.col2">Services</h5>
+        <a href="#" data-toast="toast.soon" data-i18n="footer.s1">Servicing &amp; restoration</a>
+        <a href="#" data-toast="toast.soon" data-i18n="footer.s2">Engraving atelier</a>
+        <a href="#" data-toast="toast.soon" data-i18n="footer.s3">Valuation &amp; estate</a>
+      </div>
+      <div class="f-col">
+        <h5 data-i18n="footer.col3">Legal</h5>
+        <a href="#" data-toast="toast.soon" data-i18n="footer.l1">Privacy</a>
+        <a href="#" data-toast="toast.soon" data-i18n="footer.l2">Terms of sale</a>
+        <a href="#" data-toast="toast.soon" data-i18n="footer.l3">Cookies</a>
+      </div>
+    </div>
+    <div class="foot-base sec-content">
+      <p data-i18n="footer.disc">AURELIA is an independent concept demonstration. Not affiliated with Rolex SA — Rolex, Oyster, Jubilee and related marks belong to their respective owners.</p>
+      <p>© 2026 AURELIA · <span data-i18n="footer.built">Crafted with Three.js &amp; GSAP</span></p>
+    </div>
+  </footer>
+</main>
+
+<!-- ═══════════════ CART DRAWER ═══════════════ -->
+<div id="cartBackdrop"></div>
+<aside id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping bag" aria-hidden="true">
+  <header class="cd-head">
+    <h3 data-i18n="cart.title">Your bag</h3>
+    <button id="cartClose" class="cd-close" aria-label="Close bag">
+      <svg viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.4"><path d="M2 2 L14 14 M14 2 L2 14"></path></svg>
+    </button>
+  </header>
+  <div class="cart-empty" id="cartEmpty">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 8h14l-1.2 12.2a1.8 1.8 0 0 1-1.8 1.6H8a1.8 1.8 0 0 1-1.8-1.6L5 8Z"></path><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10"></path></svg>
+    <p data-i18n="cart.empty">Your bag is empty — legend awaits.</p>
+    <button class="btn" data-goto="#collection" data-i18n="cart.emptyCta">Explore the collection</button>
+  </div>
+  <ul id="cartItems"></ul>
+  <footer class="cd-foot" id="cartFoot">
+    <div class="cart-total"><span data-i18n="cart.total">Total</span><strong id="cartTotal">$0</strong></div>
+    <p class="cart-note" data-i18n="cart.note">Complimentary insured delivery · 5-year international guarantee</p>
+    <button id="checkoutBtn" class="btn btn-solid" data-i18n="cart.checkout">Proceed to checkout</button>
+  </footer>
+</aside>
+
+<!-- ═══════════════ CHECKOUT MODAL ═══════════════ -->
+<div id="checkoutModal" role="dialog" aria-modal="true" aria-label="Checkout" aria-hidden="true">
+  <div class="modal-card">
+    <button id="checkoutClose" class="modal-close" aria-label="Close checkout">
+      <svg viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.4"><path d="M2 2 L14 14 M14 2 L2 14"></path></svg>
+    </button>
+    <div id="checkoutBody">
+      <p class="eyebrow" data-i18n="checkout.eyebrow">Private checkout</p>
+      <h3 data-i18n="checkout.title">Complete your order</h3>
+      <form id="checkoutForm" novalidate>
+        <div class="f-grid">
+          <div class="f-field"><label for="fName" data-i18n="checkout.name">Full name</label><input id="fName" type="text" autocomplete="name" required></div>
+          <div class="f-field"><label for="fEmail" data-i18n="checkout.email">Email</label><input id="fEmail" type="email" autocomplete="email" required></div>
+    <div class="f-field"><label for="fPhone" data-i18n="checkout.phone">Phone</label><input id="fPhone" type="tel" autocomplete="tel" required></div>
+    <div class="f-field"><label for="fCity" data-i18n="checkout.city">City</label><input id="fCity" type="text" autocomplete="address-level2" required></div>
+    <div class="f-field f-full"><label for="fAddr" data-i18n="checkout.addr">Address</label><input id="fAddr" type="text" autocomplete="street-address" required></div>
+          <div class="f-field f-full"><label for="fCountry" data-i18n="checkout.country">Country</label>
+            <select id="fCountry">
+              <option>Egypt</option><option>United Arab Emirates</option><option>Saudi Arabia</option><option>Kuwait</option><option>Qatar</option><option>Switzerland</option><option>United Kingdom</option><option>France</option><option>United States</option><option>Other</option>
+            </select>
+          </div>
+          <div class="f-field f-full f-pay" role="group" aria-labelledby="payLbl">
+            <label id="payLbl" data-i18n="checkout.payMethod">Payment method — simulated</label>
+            <div class="pay-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 10h18M6 15h4"></path></svg>
+              <div class="pay-card-t">
+                <b>DEMO CARD · •••• 4242</b>
+                <small data-i18n="checkout.payMock">Simulation only — card data is never requested, collected or transmitted.</small>
+              </div>
+              <span class="pay-badge">SIM</span>
+            </div>
+          </div>
+        </div>
+        <p class="f-secure">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+          <span data-i18n="checkout.secure">Simulation ledger — no real payment is processed and no data leaves this page.</span>
+        </p>
+        <button type="submit" class="btn btn-solid" data-i18n="checkout.pay">Confirm order</button>
+      </form>
+    </div>
+    <div id="orderSuccess" role="status" aria-live="polite" hidden>
+      <svg class="crown" viewBox="0 0 72 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+        <circle cx="16" cy="9" r="3"></circle><circle cx="36" cy="4" r="3"></circle><circle cx="56" cy="9" r="3"></circle>
+        <path d="M16 14 L12 32 H60 L56 14 L44 26 L36 12 L28 26 Z"></path><path d="M14 39 H58"></path>
+      </svg>
+      <h3 data-i18n="checkout.success">Order confirmed</h3>
+      <p data-i18n="checkout.successSub">A confirmation letter — and your personal watchmaker's card — are on their way to your inbox.</p>
+      <p class="order-no"><span data-i18n="checkout.order">Order</span> <b id="orderNo">#AUR-000000</b></p>
+      <button id="successClose" class="btn" data-i18n="checkout.continue">Continue</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<noscript><p class="noscript">AURELIA requires JavaScript for its 3D experience.</p></noscript>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+<script>
+(() => {
+'use strict';
+/* ════════════════════════════════════════════════════════════
+   01 · ENVIRONMENT, UTILITIES, DATA, STATE, SMOOTH SCROLL
+════════════════════════════════════════════════════════════ */
+const $  = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const lerp  = (a, b, t) => a + (b - a) * t;
+
+const FINE     = matchMedia('(pointer:fine)').matches;
+const IS_TOUCH = matchMedia('(pointer:coarse)').matches;
+const REDUCED  = matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* Reactive — re-evaluated on resize / orientation change (was frozen at boot) */
+let IS_MOBILE = matchMedia('(max-width: 900px)').matches || IS_TOUCH;
+function refreshViewportEnv(){
+  IS_MOBILE = matchMedia('(max-width: 900px)').matches || IS_TOUCH;
+}
+const HAS_GSAP  = typeof window.gsap !== 'undefined';
+const HAS_ST    = HAS_GSAP && typeof window.ScrollTrigger !== 'undefined';
+const HAS_THREE = typeof window.THREE !== 'undefined';
+if (HAS_ST) gsap.registerPlugin(ScrollTrigger);
+
+function webglAvailable(){
+  try{
+    const c = document.createElement('canvas');
+    return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl')));
+  }catch(e){ return false; }
+}
+const CAN_3D = HAS_THREE && webglAvailable();
+
+/* ── Currency table ── */
+const CURRENCIES = {
+  USD:{ rate:1,      sym:'$'    },
+  EGP:{ rate:48.6,   sym:'E£'   },
+  AED:{ rate:3.6725, sym:'AED ' },
+  SAR:{ rate:3.75,   sym:'SAR ' },
+};
+function fmtPrice(usd){
+  const c = CURRENCIES[state.currency] || CURRENCIES.USD;
+  return c.sym + Math.round(usd * c.rate).toLocaleString('en-US');
+}
+
+/* ── Live FX: refresh from open.er-api.com with a 12 h cache; static table is the offline fallback ── */
+function applyRates(r){
+  let changed = false;
+  ['EGP','AED','SAR'].forEach(code => {
+    const v = parseFloat(r && r[code]);
+    if (isFinite(v) && v > 0 && Math.abs(v - CURRENCIES[code].rate) > 0.0005){
+      CURRENCIES[code].rate = v;
+      changed = true;
+    }
+  });
+  if (changed && state.lang){
+    updatePrices();
+    renderCart();
+    updateHeroMeta();
+  }
+}
+function refreshRates(){
+  try{
+    const cached = store.get('aurelia:fx');
+    if (cached && cached.ts && cached.rates && (Date.now() - cached.ts) < 12 * 3600 * 1000){
+      applyRates(cached.rates);
+      return; /* fresh enough */
+    }
+  }catch(e){ /* ignore cache reads */ }
+  fetch('https://open.er-api.com/v6/latest/USD')
+    .then(r => (r.ok ? r.json() : Promise.reject(new Error('fx http ' + r.status))))
+    .then(data => {
+      if (!data || !data.rates) return;
+      applyRates(data.rates);
+      store.set('aurelia:fx', {
+        ts: Date.now(),
+        rates: { EGP: data.rates.EGP, AED: data.rates.AED, SAR: data.rates.SAR },
+      });
+    })
+    .catch(() => { /* offline or blocked → keep the static table */ });
+}
+
+/* ── Option catalogues ── */
+const METALS = [
+  { id:'steel',   price:0    },
+  { id:'twotone', price:3400 },
+  { id:'gold',    price:5200 },
+];
+const BRACELETS = [
+  { id:'oyster',  price:0   },
+  { id:'jubilee', price:850 },
+];
+const DIALS = [
+  { id:'black',     hex:'#0d0e11', price:0   },
+  { id:'champagne', hex:'#d9c49a', price:0   },
+  { id:'green',     hex:'#0c3b2a', price:600 },
+  { id:'blue',      hex:'#132a52', price:600 },
+  { id:'silver',    hex:'#d6d6d0', price:0   },
+  { id:'ivoire',    hex:'#efece3', price:0   },
+];
+const BEZEL_SETS = {
+  dive: [
+    { id:'black', ceramic:'#0b0e12', price:0   },
+    { id:'green', ceramic:'#0a2f22', price:700 },
+    { id:'blue',  ceramic:'#0a1e3d', price:700 },
+  ],
+  tachy: [
+    { id:'black', ceramic:'#101114', price:0   },
+    { id:'green', ceramic:'#0a2f22', price:700 },
+    { id:'blue',  ceramic:'#0a1e3d', price:700 },
+  ],
+  gmt: [
+    { id:'pepsi', a:'#9e1c24', b:'#0b2a5e', price:0   },
+    { id:'blue',  a:'#0b2a5e', b:'#0b2a5e', price:400 },
+    { id:'black', a:'#101114', b:'#101114', price:0   },
+  ],
+  fluted: [ { id:'gold', price:0 } ],
+};
+const LABELS = {
+  dials:{ en:{black:'Noir',champagne:'Champagne',green:'Olive',blue:'Azzurro',silver:'Argent',ivoire:'Ivoire'},
+          ar:{black:'أسود',champagne:'شامبانيا',green:'زيتوني',blue:'أزرق',silver:'فضي',ivoire:'عاجي'} },
+  bezels:{ en:{black:'Ceramic Noir',green:'Ceramic Green',blue:'Ceramic Blue',pepsi:'Pepsi',gold:'Fluted'},
+           ar:{black:'سيراميك أسود',green:'سيراميك أخضر',blue:'سيراميك أزرق',pepsi:'بيبسي',gold:'محزّز'} },
+  metals:{ en:{steel:'Oystersteel',twotone:'Rolesor',gold:'Yellow Gold'},
+           ar:{steel:'فولاذ أويستر',twotone:'رولسور',gold:'ذهب أصفر'} },
+  bracelets:{ en:{oyster:'Oyster',jubilee:'Jubilee'}, ar:{oyster:'أويستر',jubilee:'جبيلي'} },
+};
+
+/* ── The four references ── */
+const MODELS = [
+  {
+    id:'submariner', ref:'124060', basePrice:14250,
+    name:{en:'Submariner', ar:'صبمارينر'},
+    tagline:{en:'The reference among divers’ watches. Born 1953.', ar:'المرجع الأول بين ساعات الغوص. وُلدت عام 1953.'},
+    bezel:'dive', bracelet:'oyster', dial:'black', metal:'steel',
+    water:'300m', size:'41mm', calibre:'3235',
+    cyclops:true, subdials:false, gmt:false, guards:true,
+    mini:{ bez:'#101418', bez2:'#1b232c', dial:'#0d0e11', hands:'#d9dade', accent:'#c9a961' },
+  },
+  {
+    id:'daytona', ref:'126500LN', basePrice:26800,
+    name:{en:'Daytona', ar:'ديتونا'},
+    tagline:{en:'Born for endurance racing. Cosmograph precision.', ar:'وُلدت لسباقات التحمل. دقة كوسموغراف.'},
+    bezel:'tachy', bracelet:'oyster', dial:'panda', metal:'steel',
+    water:'100m', size:'40mm', calibre:'4131',
+    cyclops:false, subdials:true, gmt:false, guards:false,
+    mini:{ bez:'#101114', bez2:'#191c22', dial:'#ece9e2', sub:'#141419', hands:'#2a2a30', accent:'#c9a961', panda:true },
+  },
+  {
+    id:'datejust', ref:'126234', basePrice:15950,
+    name:{en:'Datejust', ar:'ديت جست'},
+    tagline:{en:'The classic watch of reference. Born 1945.', ar:'الساعة الكلاسيكية بلا منازع. وُلدت عام 1945.'},
+    bezel:'fluted', bracelet:'jubilee', dial:'champagne', metal:'twotone',
+    water:'100m', size:'36mm', calibre:'3235',
+    cyclops:true, subdials:false, gmt:false, guards:false,
+    mini:{ bez:'#e0bd6d', bez2:'#c9a052', dial:'#d9c49a', hands:'#e6c678', accent:'#8f7434' },
+  },
+  {
+    id:'gmt', ref:'126710BLRO', basePrice:17250,
+    name:{en:'GMT-Master II', ar:'GMT ماستر II'},
+    tagline:{en:'Two time zones, one horizon. The traveller’s icon.', ar:'منطقتا زمن، وأفقٌ واحد. أيقونة المسافرين.'},
+    bezel:'gmt', bracelet:'oyster', dial:'black', metal:'steel',
+    water:'100m', size:'40mm', calibre:'3285',
+    cyclops:true, subdials:false, gmt:true, guards:false,
+    mini:{ bez:'#9e1c24', bez2:'#0b2a5e', dial:'#0d0e11', hands:'#d9dade', accent:'#c9a961', half:true },
+  },
+];
+const modelById = id => MODELS.find(m => m.id === id) || MODELS[0];
+const dialById  = id => DIALS.find(d => d.id === id)  || DIALS[0];
+
+/* ── Boutiques ── */
+const BOUTIQUES = [
+  { id:'geneva', city:{en:'Geneva',ar:'جنيف'},   addr:'Rue du Rhône 42',                hours:'Mon–Sat · 10:00—19:00' },
+  { id:'dubai',  city:{en:'Dubai',ar:'دبي'},     addr:'The Dubai Mall · Fashion Avenue',hours:'Daily · 10:00—00:00'   },
+  { id:'cairo',  city:{en:'Cairo',ar:'القاهرة'}, addr:'First Mall · New Cairo',         hours:'Daily · 11:00—22:00'   },
+  { id:'riyadh', city:{en:'Riyadh',ar:'الرياض'}, addr:'Kingdom Centre · Level 2',       hours:'Daily · 10:00—23:00'   },
+];
+
+/* ── i18n dictionary ── */
+const I18N = {
+  en: {
+    'nav.collection':'Collection','nav.configurator':'Configurator','nav.craft':'Craft','nav.boutiques':'Boutiques','nav.theme':'Theme',
+    'hero.eyebrow':'Authorized Boutique · Genève',
+    'hero.t1':'Time is','hero.t2':'the ultimate','hero.t3':'LUXURY',
+    'hero.sub':'Four legendary references, one obsession with perfection — sculpted procedurally in 3D and rendered live before your eyes.',
+    'hero.scroll':'Scroll to explore','hero.from':'from',
+    'story.c1t':'The Oyster Case','story.c1b':'Hermetically sealed to 300 metres. Machined from a solid block of Oystersteel, then polished and satin-finished by hand.',
+    'story.c2t':'Superlative Chronometer','story.c2b':'Every dial is certified to −2/+2 seconds per day — twice the precision demanded of an official chronometer.',
+    'story.c3t':'The Jubilee Bracelet','story.c3b':'Five sculpted rows of links, born in 1945 — supple as silk, fluid as mercury, invisible on the wrist.',
+    'story.c4t':'Calibre 3235','story.c4b':'31 jewels, 70-hour power reserve and the Chronergy escapement — fourteen patents in a whisper of mechanics.',
+    'collection.eyebrow':'The Collection','collection.heading':'Four <em>legends</em>','collection.sub':'Select a reference — the machine reshapes itself before your eyes, link by link.',
+    'card.cta':'Discover','card.add':'Add to bag',
+    'cfg.eyebrow':'Configurator','cfg.heading':'Compose your <em>legend</em>',
+    'cfg.metal':'Metal','cfg.dial':'Dial','cfg.bezel':'Bezel','cfg.bracelet':'Bracelet','cfg.total':'Total','cfg.add':'Add to bag',
+    'craft.eyebrow':'Craftsmanship','craft.heading':'Obsession in every <em>micron</em>',
+    'craft.k1':'Jewels','craft.k2':'Hours of reserve','craft.k3':'Seconds a day','craft.k4':'Water-resistant',
+    'craft.r1t':'Alloys forged in-house',
+    'craft.r1b':'From raw ore to gleaming Oystersteel and 18 ct gold, every alloy is smelted, rolled and drawn within our own foundry — a purity no supplier can promise.',
+    'craft.r2t':'Assembled by one pair of hands',
+    'craft.r2b':'A single watchmaker assembles each movement, dial and case from start to finish, signing the chronometer certificate with personal pride.',
+    'craft.r3t':'Tested beyond the certificate',
+    'craft.r3b':'Pressure, thermal shock, magnetism and years of simulated wear — each watch leaves only after surviving a laboratory harsher than life itself.',
+    'testi.eyebrow':'Voices','testi.heading':'Owners’ <em>voices</em>',
+    'testi.1q':'“It is not a purchase; it is a rite of passage. The sweep of that second hand still stops my breath.”','testi.1a':'Amira K.','testi.1c':'Dubai',
+    'testi.2q':'“Three generations, one reference. My father’s words: buy the machine, not the moment.”','testi.2a':'James W.','testi.2c':'London',
+    'testi.3q':'“The boutique composed my Datejust live in 3D — I watched my own watch being born.”','testi.3a':'Noor A.','testi.3c':'Riyadh',
+    'boutiques.eyebrow':'Boutiques','boutiques.heading':'Visit <em>us</em>',
+    'boutiques.sub':'Four houses, one standard of welcome. Our concierge awaits by appointment.',
+    'boutiques.book':'Book an appointment',
+    'news.eyebrow':'The private list','news.title':'First to the rarest references',
+    'news.sub':'Private evenings, allocation priority and the occasional letter from Geneva. Never noise.',
+    'news.placeholder':'Your email','news.btn':'Subscribe',
+    'footer.tag':'Time, perfected — since a whisper of a dream in Geneva.',
+    'footer.col1':'Boutique','footer.col2':'Services','footer.col3':'Legal',
+    'footer.s1':'Servicing & restoration','footer.s2':'Engraving atelier','footer.s3':'Valuation & estate',
+    'footer.l1':'Privacy','footer.l2':'Terms of sale','footer.l3':'Cookies',
+    'footer.disc':'AURELIA is an independent concept demonstration. Not affiliated with Rolex SA — Rolex, Oyster, Jubilee and related marks belong to their respective owners.',
+    'footer.built':'Crafted with Three.js & GSAP',
+    'cart.title':'Your bag','cart.empty':'Your bag is empty — legend awaits.',
+    'cart.emptyCta':'Explore the collection','cart.total':'Total',
+    'cart.note':'Complimentary insured delivery · 5-year international guarantee',
+    'cart.checkout':'Proceed to checkout','cart.remove':'Remove','cart.qty':'Quantity',
+    'checkout.eyebrow':'Private checkout','checkout.title':'Complete your order',
+    'checkout.name':'Full name','checkout.email':'Email','checkout.phone':'Phone','checkout.city':'City',
+    'checkout.addr':'Address','checkout.country':'Country',
+    'checkout.payMethod':'Payment method — simulated',
+    'checkout.payMock':'Simulation only — card data is never requested, collected or transmitted.',
+    'checkout.simulating':'Simulating payment…',
+    'checkout.secure':'Simulation ledger — no real payment is processed and no data leaves this page.',
+    'checkout.pay':'Confirm order','checkout.success':'Order confirmed',
+    'checkout.successSub':'A confirmation letter — and your personal watchmaker’s card — are on their way to your inbox.',
+    'checkout.order':'Order','checkout.continue':'Continue',
+    'toast.added':'Added to your bag','toast.subscribed':'Welcome to the private list.',
+    'toast.appointment':'Our concierge will contact you shortly.','toast.soon':'This atelier opens soon.',
+    'toast.errorEmail':'Please enter a valid email address.',
+    'a11y.skip':'Skip to collection','a11y.cart':'Open shopping bag',
+    'spec.water':'Water resistance','spec.size':'Case','spec.calibre':'Calibre',
+  },
+  ar: {
+    'nav.collection':'المجموعة','nav.configurator':'المصمّم','nav.craft':'الحِرفة','nav.boutiques':'البوتيكات','nav.theme':'المظهر',
+    'hero.eyebrow':'بوتيك معتمد · جنيف',
+    'hero.t1':'الوقتُ هو','hero.t2':'أرقى','hero.t3':'الفخامة',
+    'hero.sub':'أربع نسخ أسطورية، وهوسٌ واحد بالكمال — منحوتة برمجيًا بتقنية ثلاثية الأبعاد وتُعرض أمام عينيك لحظةً بلحظة.',
+    'hero.scroll':'مرِّر للاستكشاف','hero.from':'ابتداءً من',
+    'story.c1t':'العلبة الأويستر','story.c1b':'محكمة الإغلاق حتى عمق 300 متر. تُشكَّل من كتلة واحدة من الفولاذ، ثم تُصقل وتُفرش يدويًا.',
+    'story.c2t':'كرونومتر فائق','story.c2b':'كل ميناء معتمد بدقة −2/+2 ثانية في اليوم — ضِعفُ ما تشترطه شهادة الكرونومتر الرسمية.',
+    'story.c3t':'سوار الجبيلي','story.c3b':'خمسة صفوف من الحلول المنحوتة، وُلدت عام 1945 — انسيابية كالحرير، خفيفة كأنها غير موجودة.',
+    'story.c4t':'العُقارة 3235','story.c4b':'31 جوهرة، واحتياطي طاقة 70 ساعة، وهروب Chronergy — أربعة عشر براءة اختراع في همسة ميكانيكية.',
+    'collection.eyebrow':'المجموعة','collection.heading':'أربع <em>أساطير</em>','collection.sub':'اختر نسختك — تعيد الآلة تشكيل نفسها أمام عينيك، حلقةً حلقة.',
+    'card.cta':'اكتشف','card.add':'أضف',
+    'cfg.eyebrow':'المصمّم','cfg.heading':'أَلِّف <em>أسطورتك</em>',
+    'cfg.metal':'المعدن','cfg.dial':'الميناء','cfg.bezel':'الإطار','cfg.bracelet':'السوار','cfg.total':'الإجمالي','cfg.add':'أضف إلى الحقيبة',
+    'craft.eyebrow':'الحِرفة','craft.heading':'هوسٌ في كل <em>ميكرون</em>',
+    'craft.k1':'جوهرة','craft.k2':'ساعة احتياط','craft.k3':'ثانية في اليوم','craft.k4':'مقاومة المياه',
+    'craft.r1t':'سبائك تُصهر لدينا',
+    'craft.r1b':'من الخام إلى الفولاذ اللامع والذهب عيار 18، تُصهر كل السبائك وتُدرفل وتُسحب في معملنا — نقاءٌ لا يَعِد به مورّد.',
+    'craft.r2t':'تجميع بيد واحدة',
+    'craft.r2b':'صانع ساعات واحد يجمع كل عقارة وميناء وعلبة من أولها لآخرها، ويوقّع بشهادة الكرونومتر اعتزازًا شخصيًا.',
+    'craft.r3t':'اختبارات تتجاوز الشهادة',
+    'craft.r3b':'ضغطٌ وصدمات حرارية ومغناطيسية وسنوات من التآكل المحاكى — لا تغادر الساعة إلا بعد أن تنجو من مختبرٍ أقسى من الحياة.',
+    'testi.eyebrow':'شهادات','testi.heading':'أصحاب <em>الساعات</em>',
+    'testi.1q':'«ليست مشتريات؛ بل طقسُ عبور. لا يزال انسياب عقرب الثواني يُوقِف أنفاسي.»','testi.1a':'أميرة ك.','testi.1c':'دبي',
+    'testi.2q':'«ثلاثة أجيال ونسخة واحدة. قال أبي: اشترِ الآلة لا اللحظة.»','testi.2a':'جيمس و.','testi.2c':'لندن',
+    'testi.3q':'«صمّموا ديت جست أمامي مباشرة بالثلاثية الأبعاد — رأيت ساعتي تُولد بعيني.»','testi.3a':'نور ع.','testi.3c':'الرياض',
+    'boutiques.eyebrow':'البوتيكات','boutiques.heading':'تفضّل <em>بزيارتنا</em>',
+    'boutiques.sub':'أربع دور، ومعيارٌ واحد للترحيب. ينتظرك ضيافنا بموعدٍ مسبق.',
+    'boutiques.book':'احجز موعدًا',
+    'news.eyebrow':'القائمة الخاصة','news.title':'الأولون إلى أندر النسخ',
+    'news.sub':'أمسيات خاصة، وأولوية حجز، ورسائل عرضية من جنيف. لا ضجيج أبدًا.',
+    'news.placeholder':'بريدك الإلكتروني','news.btn':'اشترك',
+    'footer.tag':'الوقت، متقنًا — منذ همسة حلمٍ في جنيف.',
+    'footer.col1':'البوتيك','footer.col2':'الخدمات','footer.col3':'القانوني',
+    'footer.s1':'الصيانة والترميم','footer.s2':'ورشة الحفر','footer.s3':'التقييم والترُّكات',
+    'footer.l1':'الخصوصية','footer.l2':'شروط البيع','footer.l3':'ملفات الارتباط',
+    'footer.disc':'أوريليا عرضٌ مفاهيمي مستقل. لا توجد أي انتماء إلى Rolex SA — فعلامات Rolex وOyster وJubilee وغيرها ملك لأصحابها.',
+    'footer.built':'صُنع بـ Three.js و GSAP',
+    'cart.title':'حقيبتك','cart.empty':'حقيبتك فارغة — الأسطورة تنتظر.',
+    'cart.emptyCta':'استكشف المجموعة','cart.total':'الإجمالي',
+    'cart.note':'توصيل مؤمَّن مجاني · ضمان دولي 5 سنوات',
+    'cart.checkout':'إتمام الشراء','cart.remove':'إزالة','cart.qty':'الكمية',
+    'checkout.eyebrow':'إتمام خاص','checkout.title':'أكمل طلبك',
+    'checkout.name':'الاسم الكامل','checkout.email':'البريد الإلكتروني','checkout.phone':'الهاتف','checkout.city':'المدينة',
+    'checkout.addr':'العنوان','checkout.country':'الدولة',
+    'checkout.payMethod':'طريقة الدفع — محاكاة',
+    'checkout.payMock':'محاكاة فقط — بيانات البطاقة لا تُطلب ولا تُجمَع أو تُرسَل إطلاقًا.',
+    'checkout.simulating':'جارٍ محاكاة الدفع…',
+    'checkout.secure':'دفتر محاكاة — لا تُعالَج أي مدفوعات حقيقية، ولا تترك البيانات هذه الصفحة.',
+    'checkout.pay':'تأكيد الطلب','checkout.success':'تم تأكيد طلبك',
+    'checkout.successSub':'رسالة التأكيد — وبطاقة صانع ساعاتك الشخصية — في طريقها إلى بريدك.',
+    'checkout.order':'الطلب','checkout.continue':'متابعة',
+    'toast.added':'أُضيفت إلى حقيبتك','toast.subscribed':'أهلًا بك في القائمة الخاصة.',
+    'toast.appointment':'سيتواصل معك ضيافنا قريبًا.','toast.soon':'هذه الورشة تُفتح قريبًا.',
+    'toast.errorEmail':'يرجى إدخال بريد إلكتروني صحيح.',
+    'a11y.skip':'تخطَّ إلى المجموعة','a11y.cart':'افتح حقيبة المشتريات',
+    'spec.water':'مقاومة المياه','spec.size':'قطر العلبة','spec.calibre':'العُقارة',
+  },
+};
+function t(key){ return (I18N[state.lang] && I18N[state.lang][key]) || I18N.en[key] || key; }
+function labelOf(group, id){ const g = LABELS[group]; return g ? (g[state.lang][id] || g.en[id] || id) : id; }
+
+/* ── State + guarded storage ── */
+const state = {
+  lang:'en', currency:'USD', theme:'dark',
+  activeModel:'submariner',
+  cfg:{ dial:'black', bezel:'black', metal:'steel', bracelet:'oyster' },
+  cart:[],
+};
+const store = {
+  get(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){ /* private mode */ } },
+};
+function savePrefs(){
+  store.set('aurelia:prefs', { lang:state.lang, currency:state.currency, theme:state.theme, model:state.activeModel });
+}
+function loadPrefs(){
+  const p = store.get('aurelia:prefs');
+  if (p){
+    if (p.lang === 'en' || p.lang === 'ar') state.lang = p.lang;
+    if (CURRENCIES[p.currency]) state.currency = p.currency;
+    if (p.theme === 'light' || p.theme === 'dark') state.theme = p.theme;
+    if (modelById(p.model)) state.activeModel = p.model;
+  }
+  const c = store.get('aurelia:cart');
+  if (Array.isArray(c)) state.cart = c.filter(it => it && it.modelId && it.qty > 0).slice(0, 24);
+}
+
+/* ── Shareable configuration via URL hash (#model=…&dial=…&bezel=…&metal=…&bracelet=…) ── */
+function isValidCfg(model, cfg){
+  return METALS.some(x => x.id === cfg.metal)
+    && DIALS.some(x => x.id === cfg.dial)
+    && BRACELETS.some(x => x.id === cfg.bracelet)
+    && (BEZEL_SETS[model.bezel] || []).some(x => x.id === cfg.bezel);
+}
+function readHashConfig(){
+  let raw = '';
+  try{ raw = (location.hash || '').slice(1); }catch(e){ return false; }
+  if (!raw || raw.length < 10) return false;
+  let q;
+  try{ q = new URLSearchParams(raw); }catch(e){ return false; }
+  const model = q.get('model');
+  if (!model || !modelById(model)) return false;
+  const m = modelById(model);
+  const cfg = {
+    dial: q.get('dial'), bezel: q.get('bezel'),
+    metal: q.get('metal'), bracelet: q.get('bracelet'),
+  };
+  if (!cfg.bezel || !isValidCfg(m, cfg)) return false;
+  state.activeModel = model;
+  state.cfg = cfg;
+  return true;
+}
+function writeHashConfig(){
+  let h = '';
+  try{
+    h = '#' + new URLSearchParams({
+      model: state.activeModel, dial: state.cfg.dial, bezel: state.cfg.bezel,
+      metal: state.cfg.metal, bracelet: state.cfg.bracelet,
+    }).toString();
+  }catch(e){ return; }
+  if (location.hash !== h){
+    try{ history.replaceState(null, '', h); }
+    catch(e){ try{ location.hash = h; }catch(e2){ /* unsupported */ } }
+  }
+}
+
+/* ── Configured price (base + premiums) ── */
+function configPrice(model, cfg){
+  let p = model.basePrice;
+  const metal = METALS.find(m => m.id === cfg.metal) || METALS[0];
+  const br    = BRACELETS.find(b => b.id === cfg.bracelet) || BRACELETS[0];
+  const dial  = dialById(cfg.dial);
+  const set   = BEZEL_SETS[model.bezel] || BEZEL_SETS.dive;
+  const bz    = set.find(b => b.id === cfg.bezel) || set[0];
+  p += metal.price + br.price + (dial ? dial.price : 0) + (bz ? (bz.price || 0) : 0);
+  return p;
+}
+
+/* ════════════════════════════════════════════════════════════
+   02 · SMOOTH SCROLL — Lenis-style inertia on native scroll
+════════════════════════════════════════════════════════════ */
+const Smooth = (() => {
+  let target = 0, current = 0, rafId = null, active = false;
+  const locked = () => document.body.classList.contains('lock');
+  const maxScroll = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  function loop(){
+    current += (target - current) * 0.0875;
+    if (Math.abs(target - current) < 0.4){ current = target; window.scrollTo(0, current); rafId = null; return; }
+    window.scrollTo(0, current);
+    rafId = requestAnimationFrame(loop);
+  }
+  const kick = () => { if (!rafId) rafId = requestAnimationFrame(loop); };
+  function init(){
+    if (!FINE || REDUCED || !HAS_GSAP) return;
+    active = true; target = current = window.scrollY;
+    window.addEventListener('wheel', e => {
+      if (locked() || e.ctrlKey || e.metaKey || e.defaultPrevented) return;
+      let dy = e.deltaY;
+      if (e.deltaMode === 1) dy *= 18; else if (e.deltaMode === 2) dy *= window.innerHeight;
+      const t = clamp(target + dy, 0, maxScroll());
+      if (t === target) return;
+      e.preventDefault();
+      target = t; kick();
+    }, { passive:false });
+    window.addEventListener('scroll', () => { if (!rafId) target = current = window.scrollY; }, { passive:true });
+  }
+  function scrollTo(y){
+    y = clamp(y, 0, maxScroll());
+    if (!active){ window.scrollTo({ top:y, behavior: REDUCED ? 'auto' : 'smooth' }); return; }
+    target = y; kick();
+  }
+  return { init, scrollTo, isActive:() => active };
+})();
+
+/* ════════════════════════════════════════════════════════════
+   03 · THREE CORE — renderer, studio environment, lights, dust
+════════════════════════════════════════════════════════════ */
+const S3 = { ready:false, renderer:null, scene:null, camera:null, maxAniso:1, envTex:null, parts:null, glow:null };
+
+function initThree(){
+  if (!CAN_3D) return false;
+  try{
+    const canvas = $('#gl');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias:!IS_MOBILE, alpha:true, powerPreference:'high-performance' });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, IS_MOBILE ? 1.75 : 2));
+    renderer.setSize(window.innerWidth, window.innerHeight, false);
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.12;
+    if (!IS_MOBILE){
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    }
+    S3.renderer = renderer;
+    canvas.addEventListener('webglcontextlost', e => {
+      e.preventDefault();
+      stopLoop();
+      if (S3.ready) disposeThree();
+      /* GPU-dependent pipeline (PMREM env, materials) can't survive mid-session — degrade honestly */
+      document.documentElement.classList.add('no-webgl');
+      console.warn('[AURELIA] WebGL context lost — static fallback engaged. Reload to re-enable 3D.');
+    }, false);
+    canvas.addEventListener('webglcontextrestored', () => {
+      console.warn('[AURELIA] WebGL context restored — reload the page to re-enable 3D.');
+    }, false);
+    S3.maxAniso = renderer.capabilities.getMaxAnisotropy ? renderer.capabilities.getMaxAnisotropy() : 1;
+
+    S3.scene  = new THREE.Scene();
+    S3.camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 60);
+    S3.camera.position.set(0, 0, 6.6);
+
+    buildStudioEnvironment();
+    buildLights();
+    buildFloor();
+    buildParticles();
+    buildGlow();
+    S3.ready = true;
+    return true;
+  }catch(err){
+    console.warn('3D disabled:', err && err.message);
+    S3.ready = false;
+    return false;
+  }
+}
+
+/* Soft-box studio captured into a PMREM environment — metals need it */
+function buildStudioEnvironment(){
+  const env = new THREE.Scene();
+  const panel = (w, h, color, x, y, z) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color, side:THREE.DoubleSide }));
+    m.position.set(x, y, z); m.lookAt(0, 0, 0); env.add(m);
+  };
+  env.add(new THREE.Mesh(new THREE.SphereGeometry(20, 16, 12),
+    new THREE.MeshBasicMaterial({ color:new THREE.Color(0.012, 0.012, 0.014), side:THREE.BackSide })));
+  panel(9, 4.5, new THREE.Color(7, 7, 7),        0,  6.5,  1.5);  // key softbox overhead
+  panel(2.2, 11, new THREE.Color(4.4, 3.4, 1.9), -7,  1.2,  2.5);  // long warm gold strip (left)
+  panel(2.2, 11, new THREE.Color(1.5, 2.0, 3.1),  7,  0.4, -1.0);  // cool strip (right)
+  panel(6, 2.4, new THREE.Color(1.4, 1.4, 1.5),   0, -1.2,  6.5);  // front fill
+  panel(4, 4,  new THREE.Color(0.55, 0.62, 0.55), 1,  2.0, -6.0);  // faint back spill
+  const pmrem = new THREE.PMREMGenerator(S3.renderer);
+  const rt = pmrem.fromScene(env, 0.035);
+  S3.scene.environment = rt.texture;
+  S3.envTex = rt.texture;
+  pmrem.dispose();
+}
+
+function buildLights(){
+  const key = new THREE.SpotLight(0xfff1da, 1.5, 40, 0.65, 0.9, 1.2);
+  key.position.set(3.6, 5.2, 4.6);
+  if (!IS_MOBILE){
+    key.castShadow = true;
+    key.shadow.mapSize.set(1024, 1024);
+    key.shadow.bias = -0.0004;
+    key.shadow.camera.near = 1; key.shadow.camera.far = 20;
+  }
+  S3.scene.add(key); S3.scene.add(key.target);
+
+  const rim = new THREE.DirectionalLight(0xd8b46a, 1.35);          // gold kicker
+  rim.position.set(-4.4, 2.4, -3.6);
+  const fill = new THREE.DirectionalLight(0x9db8d9, 0.38);         // cool fill
+  fill.position.set(-2.2, -1.4, 4.2);
+  const amb = new THREE.AmbientLight(0x232326, 0.65);
+  S3.scene.add(rim, fill, amb);
+}
+
+function buildFloor(){
+  if (IS_MOBILE) return;
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity:0.3 }));
+  floor.rotation.x = -Math.PI / 2; floor.position.y = -2.75; floor.receiveShadow = true;
+  S3.scene.add(floor);
+}
+
+/* Gold dust — points with a soft radial sprite */
+function buildParticles(){
+  const COUNT = IS_MOBILE ? 130 : 340;
+  const cnv = document.createElement('canvas'); cnv.width = cnv.height = 64;
+  const ctx = cnv.getContext('2d');
+  const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+  g.addColorStop(0, 'rgba(255,240,200,1)'); g.addColorStop(0.35, 'rgba(232,205,130,.55)'); g.addColorStop(1, 'rgba(201,169,97,0)');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, 64, 64);
+  const spriteTex = new THREE.CanvasTexture(cnv);
+
+  const pos = new Float32Array(COUNT * 3);
+  const spd = new Float32Array(COUNT);
+  for (let i = 0; i < COUNT; i++){
+    pos[i*3]   = (Math.random() - 0.5) * 11;
+    pos[i*3+1] = (Math.random() - 0.5) * 6.5;
+    pos[i*3+2] = (Math.random() - 0.5) * 4.5 - 0.5;
+    spd[i] = 0.05 + Math.random() * 0.14;
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  const mat = new THREE.PointsMaterial({
+    size:0.045, map:spriteTex, color:0xc9a961, transparent:true, opacity:0.5,
+    depthWrite:false, blending:THREE.AdditiveBlending, sizeAttenuation:true,
+  });
+  S3.parts = new THREE.Points(geo, mat);
+  S3.parts.userData = { spd, base:pos.slice() };
+  S3.scene.add(S3.parts);
+}
+
+/* Two giant additive sprites = fake bloom / studio spill */
+function buildGlow(){
+  const cnv = document.createElement('canvas'); cnv.width = cnv.height = 256;
+  const ctx = cnv.getContext('2d');
+  const g = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+  g.addColorStop(0, 'rgba(201,169,97,.34)'); g.addColorStop(0.5, 'rgba(160,130,70,.10)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, 256, 256);
+  const tex = new THREE.CanvasTexture(cnv);
+  const mk = (scale, x, y, z, op) => {
+    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map:tex, transparent:true, opacity:op, depthWrite:false, blending:THREE.AdditiveBlending }));
+    s.scale.set(scale, scale, 1); s.position.set(x, y, z); S3.scene.add(s); return s;
+  };
+  S3.glow = [ mk(9.5, 0, 0.4, -2.6, 0.55), mk(5, -4.2, 2.6, -3.2, 0.22), mk(4, 4.4, -2.2, -3.4, 0.16) ];
+}
+
+function disposeThree(){ /* full teardown only used if fallback triggers late */
+  if (!S3.ready) return;
+  S3.scene.traverse(o => {
+    if (o.geometry) o.geometry.dispose();
+    if (o.material){ const ms = Array.isArray(o.material) ? o.material : [o.material]; ms.forEach(m => { if (m.map && m.map !== S3.envTex) m.map.dispose(); m.dispose(); }); }
+  });
+  S3.renderer.dispose();
+  S3.ready = false;
+}
+
+function resizeThree(){
+  if (!S3.ready) return;
+  const w = window.innerWidth, h = window.innerHeight;
+  S3.camera.aspect = w / h;
+  S3.camera.updateProjectionMatrix();
+  S3.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, IS_MOBILE ? 1.75 : 2));
+  S3.renderer.setSize(w, h, false);
+}
+
+/* ════════════════════════════════════════════════════════════
+   04 · WATCH BUILDER I — canvas textures & materials
+   Watch space: dial normal = +Z · 12 o'clock = +Y · crown = +X
+════════════════════════════════════════════════════════════ */
+const TAU = Math.PI * 2;
+
+function roundRectPath(x, a, b, w, h, r){
+  x.beginPath();
+  x.moveTo(a + r, b);
+  x.arcTo(a + w, b, a + w, b + h, r);
+  x.arcTo(a + w, b + h, a, b + h, r);
+  x.arcTo(a, b + h, a, b, r);
+  x.arcTo(a, b, a + w, b, r);
+  x.closePath();
+}
+function spacedText(x, str, cx, y, font, sp){
+  x.font = font;
+  const ws = []; let w = 0;
+  for (const ch of str){ const cw = x.measureText(ch).width; ws.push(cw); w += cw + sp; }
+  w -= sp;
+  let px = cx - w / 2;
+  const prev = x.textAlign; x.textAlign = 'left';
+  let i = 0;
+  for (const ch of str){ x.fillText(ch, px, y); px += ws[i++] + sp; }
+  x.textAlign = prev;
+}
+function arcText(x, str, cx, cy, r, centerA, sp){
+  let a = centerA - (sp * (str.length - 1)) / 2;
+  for (const ch of str){
+    x.save();
+    x.translate(cx + Math.cos(a) * r, cy + Math.sin(a) * r);
+    x.rotate(a + Math.PI / 2);
+    x.fillText(ch, 0, 0);
+    x.restore();
+    a += sp;
+  }
+}
+function finishTex(cnv){
+  const tex = new THREE.CanvasTexture(cnv);
+  tex.anisotropy = S3.maxAniso;
+  tex.encoding = THREE.sRGBEncoding;
+  return tex;
+}
+
+/* ── Dial face (1024²) ── */
+function makeDialTexture(model, cfg){
+  const S = 1024, cx = S / 2, cy = S / 2, R = S / 2;
+  const cnv = document.createElement('canvas'); cnv.width = cnv.height = S;
+  const x = cnv.getContext('2d');
+  const d = dialById(cfg.dial);
+  const light = cfg.dial !== 'black' && cfg.dial !== 'green' && cfg.dial !== 'blue';
+  const ink = light ? '#262218' : '#ece7da';
+
+  x.fillStyle = d.hex;
+  x.beginPath(); x.arc(cx, cy, R, 0, TAU); x.fill();
+
+  /* sunburst brushing */
+  x.save(); x.translate(cx, cy);
+  for (let i = 0; i < 540; i++){
+    const a = (i / 540) * TAU;
+    x.strokeStyle = (i % 2 ? 'rgba(255,255,255,' : 'rgba(0,0,0,') + (0.015 + Math.random() * 0.03) + ')';
+    x.lineWidth = 1.7;
+    x.beginPath(); x.moveTo(0, 0); x.lineTo(Math.cos(a) * R, Math.sin(a) * R); x.stroke();
+  }
+  x.restore();
+
+  const vg = x.createRadialGradient(cx, cy, R * 0.25, cx, cy, R);
+  vg.addColorStop(0, 'rgba(0,0,0,0)');
+  vg.addColorStop(1, light ? 'rgba(0,0,0,.16)' : 'rgba(0,0,0,.4)');
+  x.fillStyle = vg; x.beginPath(); x.arc(cx, cy, R, 0, TAU); x.fill();
+
+  /* minute track */
+  x.strokeStyle = ink;
+  for (let i = 0; i < 60; i++){
+    const a = (i / 60) * TAU, major = i % 5 === 0;
+    const r1 = R * 0.958, r2 = R * (major ? 0.9 : 0.928);
+    x.lineWidth = major ? 2.6 : 1.2; x.globalAlpha = major ? 0.85 : 0.5;
+    x.beginPath();
+    x.moveTo(cx + Math.cos(a) * r1, cy + Math.sin(a) * r1);
+    x.lineTo(cx + Math.cos(a) * r2, cy + Math.sin(a) * r2);
+    x.stroke();
+  }
+  x.globalAlpha = 1;
+
+  /* typography */
+  x.fillStyle = ink; x.textBaseline = 'middle';
+  spacedText(x, 'AURELIA', cx, cy - R * 0.42, '600 54px "Cormorant Garamond", Georgia, serif', 15);
+  x.globalAlpha = 0.8;
+  spacedText(x, model.subdials ? 'COSMOGRAPH' : 'OYSTER PERPETUAL', cx, cy - R * 0.3, '500 21px Inter, Arial, sans-serif', 7);
+  x.globalAlpha = 0.62;
+  spacedText(x, 'SUPERLATIVE CHRONOMETER', cx, cy + R * 0.33, '500 20px Inter, Arial, sans-serif', 4.5);
+  spacedText(x, 'OFFICIALLY CERTIFIED', cx, cy + R * 0.41, '500 20px Inter, Arial, sans-serif', 4.5);
+  x.globalAlpha = 0.4;
+  spacedText(x, 'SWISS MADE', cx, cy + R * 0.865, '500 17px Inter, Arial, sans-serif', 6);
+  x.globalAlpha = 1;
+
+  /* date window at 3 o'clock */
+  if (model.cyclops){
+    const dw = R * 0.155, dh = R * 0.2, dx = cx + R * 0.585;
+    x.fillStyle = '#f2efe6';
+    roundRectPath(x, dx - dw / 2, cy - dh / 2, dw, dh, 9); x.fill();
+    x.strokeStyle = 'rgba(0,0,0,.4)'; x.lineWidth = 2.5; x.stroke();
+    x.fillStyle = '#17150f';
+    x.font = '600 56px Inter, Arial, sans-serif'; x.textAlign = 'center';
+    x.fillText(String(new Date().getDate()), dx, cy + 3);
+    x.textAlign = 'left';
+  }
+
+  /* panda chronograph subdials */
+  if (model.subdials){
+    const r = R * 0.2;
+    [[cx - R * 0.42, cy], [cx + R * 0.42, cy], [cx, cy + R * 0.42]].forEach(([sx, sy]) => {
+      x.fillStyle = (model.mini && model.mini.sub) || '#141419';
+      x.beginPath(); x.arc(sx, sy, r, 0, TAU); x.fill();
+      x.strokeStyle = 'rgba(255,255,255,.28)'; x.lineWidth = 2; x.stroke();
+      x.strokeStyle = 'rgba(255,255,255,.07)'; x.lineWidth = 1.4;
+      for (let rr = r * 0.3; rr < r * 0.9; rr += r * 0.18){ x.beginPath(); x.arc(sx, sy, rr, 0, TAU); x.stroke(); }
+      x.strokeStyle = 'rgba(240,238,228,.85)';
+      for (let i = 0; i < 12; i++){
+        const a = (i / 12) * TAU;
+        x.lineWidth = i % 3 === 0 ? 2.2 : 1.1;
+        x.beginPath();
+        x.moveTo(sx + Math.cos(a) * r * 0.8, sy + Math.sin(a) * r * 0.8);
+        x.lineTo(sx + Math.cos(a) * r * 0.93, sy + Math.sin(a) * r * 0.93);
+        x.stroke();
+      }
+      x.fillStyle = 'rgba(240,238,228,.9)';
+      x.beginPath(); x.arc(sx, sy, 4, 0, TAU); x.fill();
+    });
+  }
+
+  return finishTex(cnv);
+}
+
+/* ── Bezel inserts (512², planar on RingGeometry 0.655→0.875) ── */
+function makeDiveInsert(opt){
+  const S = 512, cx = S / 2, cy = S / 2;
+  const cnv = document.createElement('canvas'); cnv.width = cnv.height = S;
+  const x = cnv.getContext('2d');
+  const u = v => v * (256 / 0.875); // world units → px
+  x.fillStyle = opt.ceramic;
+  x.beginPath(); x.arc(cx, cy, u(0.875), 0, TAU);
+  x.arc(cx, cy, u(0.655), 0, TAU, true); x.fill();
+  const shine = x.createLinearGradient(0, 0, 0, S);
+  shine.addColorStop(0, 'rgba(255,255,255,.09)'); shine.addColorStop(0.5, 'rgba(255,255,255,0)');
+  x.fillStyle = shine;
+  x.beginPath(); x.arc(cx, cy, u(0.875), 0, TAU); x.arc(cx, cy, u(0.655), 0, TAU, true); x.fill();
+
+  x.fillStyle = x.strokeStyle = '#e2e6ea';
+  /* inverted triangle at 12 + lume pip */
+  x.beginPath();
+  x.moveTo(cx - u(0.045), cy - u(0.855));
+  x.lineTo(cx + u(0.045), cy - u(0.855));
+  x.lineTo(cx, cy - u(0.70));
+  x.closePath(); x.fill();
+  x.fillStyle = '#d8efe0';
+  x.beginPath(); x.arc(cx, cy - u(0.80), u(0.022), 0, TAU); x.fill();
+  /* minute graduations 0–15 */
+  x.strokeStyle = '#e2e6ea';
+  for (let i = 0; i <= 15; i++){
+    const a = (i / 60) * TAU - Math.PI / 2, major = i % 5 === 0;
+    x.lineWidth = major ? 5 : 3;
+    x.beginPath();
+    x.moveTo(cx + Math.cos(a) * u(0.865), cy + Math.sin(a) * u(0.865));
+    x.lineTo(cx + Math.cos(a) * u(major ? 0.72 : 0.78), cy + Math.sin(a) * u(major ? 0.72 : 0.78));
+    x.stroke();
+  }
+  /* numerals */
+  x.fillStyle = '#dfe3e8'; x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.font = '600 46px Inter, Arial, sans-serif';
+  [10, 20, 30, 40, 50].forEach(v => {
+    const a = (v / 60) * TAU - Math.PI / 2;
+    x.save();
+    x.translate(cx + Math.cos(a) * u(0.775), cy + Math.sin(a) * u(0.775));
+    x.rotate(a + Math.PI / 2);
+    x.fillText(String(v), 0, 0);
+    x.restore();
+  });
+  return finishTex(cnv);
+}
+
+function makeGMTInsert(opt){
+  const S = 512, cx = S / 2, cy = S / 2;
+  const cnv = document.createElement('canvas'); cnv.width = cnv.height = S;
+  const x = cnv.getContext('2d');
+  const u = v => v * (256 / 0.875);
+  const band = (c, a0, a1) => {
+    x.fillStyle = c;
+    x.beginPath(); x.arc(cx, cy, u(0.875), a0, a1);
+    x.arc(cx, cy, u(0.655), a1, a0, true); x.fill();
+  };
+  band(opt.b, -Math.PI / 2, Math.PI / 2);   // right half — 12→6 o'clock
+  band(opt.a, Math.PI / 2, 3 * Math.PI / 2); // left half
+  const shine = x.createLinearGradient(0, 0, 0, S);
+  shine.addColorStop(0, 'rgba(255,255,255,.08)'); shine.addColorStop(0.55, 'rgba(255,255,255,0)');
+  x.fillStyle = shine;
+  x.beginPath(); x.arc(cx, cy, u(0.875), 0, TAU); x.arc(cx, cy, u(0.655), 0, TAU, true); x.fill();
+
+  x.fillStyle = x.strokeStyle = '#e8eaee';
+  x.beginPath();
+  x.moveTo(cx - u(0.045), cy - u(0.855));
+  x.lineTo(cx + u(0.045), cy - u(0.855));
+  x.lineTo(cx, cy - u(0.70));
+  x.closePath(); x.fill();
+  x.strokeStyle = '#e8eaee';
+  for (let h = 0; h < 24; h++){
+    const a = (h / 24) * TAU - Math.PI / 2, major = h % 2 === 0;
+    x.lineWidth = major ? 4.5 : 2.5;
+    x.beginPath();
+    x.moveTo(cx + Math.cos(a) * u(0.865), cy + Math.sin(a) * u(0.865));
+    x.lineTo(cx + Math.cos(a) * u(major ? 0.775 : 0.815), cy + Math.sin(a) * u(major ? 0.775 : 0.815));
+    x.stroke();
+  }
+  x.font = '600 44px Inter, Arial, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
+  for (let h = 2; h <= 22; h += 2){
+    const a = (h / 24) * TAU - Math.PI / 2;
+    x.save();
+    x.translate(cx + Math.cos(a) * u(0.70), cy + Math.sin(a) * u(0.70));
+    x.rotate(a + Math.PI / 2);
+    x.fillText(String(h), 0, 0);
+    x.restore();
+  }
+  return finishTex(cnv);
+}
+
+function makeTachyInsert(opt){
+  const S = 512, cx = S / 2, cy = S / 2;
+  const cnv = document.createElement('canvas'); cnv.width = cnv.height = S;
+  const x = cnv.getContext('2d');
+  const u = v => v * (256 / 0.875);
+  x.fillStyle = opt.ceramic;
+  x.beginPath(); x.arc(cx, cy, u(0.875), 0, TAU);
+  x.arc(cx, cy, u(0.655), 0, TAU, true); x.fill();
+  const shine = x.createLinearGradient(0, 0, 0, S);
+  shine.addColorStop(0, 'rgba(255,255,255,.07)'); shine.addColorStop(0.5, 'rgba(255,255,255,0)');
+  x.fillStyle = shine;
+  x.beginPath(); x.arc(cx, cy, u(0.875), 0, TAU); x.arc(cx, cy, u(0.655), 0, TAU, true); x.fill();
+
+  x.fillStyle = '#e8eaee'; x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.font = '600 34px Inter, Arial, sans-serif';
+  [400, 300, 250, 200, 170, 150, 130, 120, 110, 100, 90, 80, 70, 65, 60].forEach(v => {
+    const a = (3600 / v) / 60 * TAU - Math.PI / 2;
+    x.save();
+    x.translate(cx + Math.cos(a) * u(0.765), cy + Math.sin(a) * u(0.765));
+    x.rotate(a + Math.PI / 2);
+    x.fillText(String(v), 0, 0);
+    x.restore();
+  });
+  x.font = '500 27px Inter, Arial, sans-serif';
+  arcText(x, 'TACHYMETER', cx, cy, u(0.72), -Math.PI / 2, 0.088);
+  x.globalAlpha = 0.7;
+  x.font = '500 22px Inter, Arial, sans-serif';
+  arcText(x, 'UNITS PER HOUR', cx, cy, u(0.72), Math.PI / 2, 0.075);
+  x.globalAlpha = 1;
+  return finishTex(cnv);
+}
+
+/* ── Material factory (fresh per build → clean disposal) ── */
+function buildMaterials(model, cfg){
+  const lin = h => new THREE.Color(h).convertSRGBToLinear();
+  const GOLD = 0xe2b96b, STEEL = 0xd7d8dc;
+  const isGold = cfg.metal === 'gold', isTwo = cfg.metal === 'twotone';
+  const caseColor  = isGold ? GOLD : STEEL;
+  const bezelColor = (isGold || isTwo) ? GOLD : STEEL;
+  const handsColor = (isGold || isTwo) ? GOLD : STEEL;
+  const phys = o => { const m = new THREE.MeshPhysicalMaterial(o); m.envMapIntensity = o.envMapIntensity || 1.15; return m; };
+
+  const M = {
+    caseM:  phys({ color:lin(caseColor), metalness:1, roughness:0.34, clearcoat:0.5, clearcoatRoughness:0.3 }),
+    polish: phys({ color:lin(bezelColor), metalness:1, roughness:0.13, clearcoat:0.9, clearcoatRoughness:0.16, envMapIntensity:1.35 }),
+    gold:   phys({ color:lin(GOLD), metalness:1, roughness:0.2, clearcoat:0.85, clearcoatRoughness:0.2, envMapIntensity:1.35 }),
+    hands:  phys({ color:lin(handsColor), metalness:1, roughness:0.18, clearcoat:0.9, clearcoatRoughness:0.15, envMapIntensity:1.4 }),
+    braceA: phys({ color:lin((isGold || isTwo) ? GOLD : STEEL), metalness:1, roughness:0.12, clearcoat:0.9, clearcoatRoughness:0.14, envMapIntensity:1.3 }),
+    braceB: phys({ color:lin(isGold ? GOLD : STEEL), metalness:1, roughness:0.36, clearcoat:0.4, clearcoatRoughness:0.3 }),
+    dark:   phys({ color:lin(0x3a3d43), metalness:1, roughness:0.5 }),
+    lume:   new THREE.MeshStandardMaterial({ color:lin(0xdfeee2), emissive:lin(0x5d8f74), emissiveIntensity:0.55, roughness:0.4 }),
+    ruby:   new THREE.MeshStandardMaterial({ color:lin(0x9c1024), emissive:lin(0x6e0a1c), emissiveIntensity:0.8, roughness:0.15, metalness:0.2 }),
+    dial:   new THREE.MeshStandardMaterial({ map:makeDialTexture(model, cfg), roughness:0.52, metalness:0.42, envMapIntensity:0.9 }),
+    crystal:phys({ color:lin(0xffffff), metalness:0, roughness:0.02, transmission:1, clearcoat:1, clearcoatRoughness:0.04, transparent:true, opacity:1, depthWrite:false, side:THREE.DoubleSide, envMapIntensity:1.6 }),
+  };
+  const set = BEZEL_SETS[model.bezel] || BEZEL_SETS.dive;
+  const bz = set.find(b => b.id === cfg.bezel) || set[0];
+  if (model.bezel === 'dive' || model.bezel === 'tachy'){
+    M.ceramic = phys({ color:lin(bz.ceramic), metalness:0.25, roughness:0.16, clearcoat:1, clearcoatRoughness:0.08, envMapIntensity:1.15 });
+    M.insertMap = model.bezel === 'dive' ? makeDiveInsert(bz) : makeTachyInsert(bz);
+  } else if (model.bezel === 'gmt'){
+    M.insertMap = makeGMTInsert(bz);
+  }
+  M.bzOpt = bz;
+  return M;
+}
+
+/* ── Small geometry helpers ── */
+function latheFrom(pts, seg){
+  const g = new THREE.LatheGeometry(pts.map(p => new THREE.Vector2(p[0], p[1])), seg);
+  g.rotateX(Math.PI / 2);
+  return g;
+}
+function roundedRectShape(w, h, r){
+  const s = new THREE.Shape(), x = -w / 2, y = -h / 2;
+  s.moveTo(x + r, y);
+  s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r);
+  s.lineTo(x + w, y + h - r); s.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  s.lineTo(x + r, y + h); s.quadraticCurveTo(x, y + h, x, y + h - r);
+  s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y);
+  return s;
+}
+function roundedBoxGeo(w, h, d, r){
+  const g = new THREE.ExtrudeGeometry(roundedRectShape(w, h, r), { depth:d - 0.024, bevelEnabled:true, bevelThickness:0.012, bevelSize:0.012, bevelSegments:2, curveSegments:4 });
+  g.center();
+  return g;
+}
+function gearShape(rO, rI, teeth){
+  const s = new THREE.Shape(), N = teeth * 2;
+  for (let i = 0; i <= N; i++){
+    const a = (i / N) * TAU, r = i % 2 === 0 ? rO : rI;
+    const px = Math.cos(a) * r, py = Math.sin(a) * r;
+    i === 0 ? s.moveTo(px, py) : s.lineTo(px, py);
+  }
+  s.closePath();
+  const hole = new THREE.Path(); hole.absarc(0, 0, rI * 0.4, 0, TAU, true);
+  s.holes.push(hole);
+  return s;
+}
+
+/* ════════════════════════════════════════════════════════════
+   05 · WATCH BUILDER II — assembly, explode, swap, live config
+════════════════════════════════════════════════════════════ */
+S3.watchRig = null;
+function ensureRig(){
+  if (!S3.ready || S3.watchRig) return;
+  S3.watchRig = new THREE.Group();
+  S3.watchHold = new THREE.Group();
+  S3.watchRig.add(S3.watchHold);
+  S3.scene.add(S3.watchRig);
+}
+
+function mesh(geo, mat, role){
+  const m = new THREE.Mesh(geo, mat);
+  if (role) m.userData.role = role;
+  return m;
+}
+function shadowed(m){ if (!IS_MOBILE) m.castShadow = true; return m; }
+
+function fluteGeometry(geo, amp, teeth){
+  const p = geo.attributes.position;
+  for (let i = 0; i < p.count; i++){
+    const px = p.getX(i), pz = p.getZ(i);
+    const r = Math.hypot(px, pz);
+    if (r < 0.5) continue;
+    const a = Math.atan2(pz, px);
+    const wv = Math.abs(Math.sin(a * teeth / 2));
+    const nr = r * (1 + amp * Math.pow(wv, 0.7));
+    p.setX(i, Math.cos(a) * nr); p.setZ(i, Math.sin(a) * nr);
+  }
+  geo.computeVertexNormals();
+  return geo;
+}
+
+/* ── Hands ── */
+function mercedesHand(len, cr, w, M){
+  const g = new THREE.Group(), depth = 0.011;
+  const stem = new THREE.Mesh(new THREE.BoxGeometry(w * 0.62, len * 0.5, depth), M.hands);
+  stem.position.y = len * 0.25; g.add(stem);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(cr, w * 0.3, 10, 28), M.hands);
+  ring.position.y = len * 0.56; g.add(ring);
+  for (let i = 0; i < 3; i++){
+    const a0 = Math.PI / 2 + i * TAU / 3 - 0.42, a1 = a0 + 0.84;
+    const sh = new THREE.Shape();
+    sh.absarc(0, 0, cr * 0.95, a0, a1, false);
+    sh.absarc(0, 0, cr * 0.34, a1, a0, true);
+    const sec = new THREE.Mesh(new THREE.ShapeGeometry(sh, 10), M.hands);
+    sec.position.y = len * 0.56; g.add(sec);
+  }
+  const baseY = len * 0.56 + cr * 0.9, tipY = len;
+  const sh = new THREE.Shape();
+  sh.moveTo(-w * 0.32, baseY); sh.lineTo(w * 0.32, baseY);
+  sh.lineTo(w * 0.15, tipY); sh.lineTo(-w * 0.15, tipY);
+  sh.closePath();
+  g.add(new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth, bevelEnabled:false }), M.hands));
+  const lume = new THREE.Mesh(new THREE.BoxGeometry(w * 0.3, (tipY - baseY) * 0.55, 0.005), M.lume);
+  lume.position.set(0, baseY + (tipY - baseY) * 0.32, depth + 0.002);
+  g.add(lume);
+  return g;
+}
+function secondHand(len, M){
+  const g = new THREE.Group();
+  const bar = new THREE.Mesh(new THREE.BoxGeometry(0.013, len * 0.82, 0.008), M.hands);
+  bar.position.y = len * 0.21; g.add(bar);
+  const cw = new THREE.Mesh(new THREE.TorusGeometry(0.034, 0.011, 8, 20), M.hands);
+  cw.position.y = -len * 0.27; g.add(cw);
+  const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.032, 0.032, 0.022, 16).rotateX(Math.PI / 2), M.hands);
+  g.add(hub);
+  return g;
+}
+function gmtHand(M){
+  const g = new THREE.Group();
+  const bar = new THREE.Mesh(new THREE.BoxGeometry(0.016, 0.5, 0.009), M.hands);
+  bar.position.y = 0.2; g.add(bar);
+  const sh = new THREE.Shape();
+  sh.moveTo(0, 0.58); sh.lineTo(0.032, 0.42); sh.lineTo(-0.032, 0.42); sh.closePath();
+  g.add(new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth:0.009, bevelEnabled:false }), M.hands));
+  const lume = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.09, 0.005), M.lume);
+  lume.position.set(0, 0.33, 0.011); g.add(lume);
+  return g;
+}
+
+/* ── Bracelet strap (instanced links curved around a wrist axis on X) ── */
+function buildStrap(M, cfg, s){
+  const g = new THREE.Group();
+  const R = 1.73, zc = -1.55, phi0 = 0.665, dPhi = 0.127, N = 9;
+  const jub = cfg.bracelet === 'jubilee';
+  const cols = jub
+    ? [[-0.395, 0.185, 'braceB'], [-0.2, 0.185, 'braceB'], [0, 0.2, 'braceA'], [0.2, 0.185, 'braceB'], [0.395, 0.185, 'braceB']]
+    : [[-0.345, 0.26, 'braceB'], [0, 0.52, 'braceA'], [0.345, 0.26, 'braceB']];
+  const end = shadowed(mesh(roundedBoxGeo(0.98, 0.14, 0.10, 0.03), M.braceA, 'braceA'));
+  end.position.set(0, s * 1.0, -0.12); end.rotation.x = s * 0.28;
+  g.add(end);
+  const geoCache = {};
+  cols.forEach(([cx, w, matName]) => {
+    if (!geoCache[w]) geoCache[w] = roundedBoxGeo(w, 0.205, 0.085, 0.018);
+    const inst = new THREE.InstancedMesh(geoCache[w], M[matName], N);
+    inst.userData.role = matName;
+    const dummy = new THREE.Object3D();
+    for (let i = 0; i < N; i++){
+      const phi = phi0 + dPhi * i;
+      const sc = 1 - i * 0.016;
+      dummy.position.set(cx * sc, s * Math.sin(phi) * R, zc + Math.cos(phi) * R);
+      dummy.rotation.set(-s * phi, 0, 0);
+      dummy.scale.setScalar(sc);
+      dummy.updateMatrix();
+      inst.setMatrixAt(i, dummy.matrix);
+    }
+    inst.instanceMatrix.needsUpdate = true;
+    shadowed(inst);
+    g.add(inst);
+  });
+  return g;
+}
+
+/* ── Full watch assembly ── */
+function buildWatch(model, cfg){
+  const M = buildMaterials(model, cfg);
+  const seg = IS_MOBILE ? 64 : 96;
+  const V3 = (x, y, z) => new THREE.Vector3(x, y, z);
+  const root = new THREE.Group();
+  const spin = new THREE.Group();
+  root.add(spin);
+  const parts = {}, hands = {}, spinners = [];
+
+  const P = (name, off, rot) => {
+    const g = new THREE.Group();
+    g.userData.off = off; g.userData.rot = rot || 0;
+    spin.add(g); parts[name] = g;
+    return g;
+  };
+
+  /* mid-case, rehaut, lugs, crown, guards */
+  const caseG = P('case', V3(0, 0, -0.52));
+  caseG.add(shadowed(mesh(latheFrom([[0.62, -0.145], [0.86, -0.145], [0.985, -0.06], [1.02, 0.05], [0.985, 0.14], [0.90, 0.185], [0.66, 0.205]], seg), M.caseM, 'caseM')));
+  caseG.add(mesh(latheFrom([[0.63, 0.205], [0.662, 0.292]], seg), M.dark, 'dark'));
+  [[1, 1], [1, -1], [-1, 1], [-1, -1]].forEach(([sx, sy]) => {
+    const lug = shadowed(mesh(roundedBoxGeo(0.17, 0.27, 0.20, 0.05), M.caseM, 'caseM'));
+    lug.position.set(sx * 0.53, sy * 0.87, -0.03);
+    lug.rotation.z = -sx * sy * 0.15; lug.rotation.x = sy * 0.10;
+    caseG.add(lug);
+  });
+  const crownG = new THREE.Group();
+  crownG.position.set(1.10, 0, -0.02);
+  crownG.add(shadowed(mesh(new THREE.CylinderGeometry(0.085, 0.085, 0.13, 28).rotateZ(Math.PI / 2), M.polish, 'polish')));
+  const cap = mesh(new THREE.CylinderGeometry(0.052, 0.078, 0.045, 20).rotateZ(Math.PI / 2), M.polish, 'polish');
+  cap.position.x = 0.085; crownG.add(cap);
+  const knurl = new THREE.InstancedMesh(new THREE.BoxGeometry(0.128, 0.018, 0.02), M.polish, 20);
+  knurl.userData.role = 'polish';
+  const kd = new THREE.Object3D();
+  for (let i = 0; i < 20; i++){
+    const a = (i / 20) * TAU;
+    kd.position.set(0, Math.sin(a) * 0.085, Math.cos(a) * 0.085);
+    kd.rotation.set(a, 0, 0);
+    kd.updateMatrix();
+    knurl.setMatrixAt(i, kd.matrix);
+  }
+  knurl.instanceMatrix.needsUpdate = true;
+  crownG.add(knurl);
+  caseG.add(crownG);
+  if (model.guards){
+    [[1], [-1]].forEach(([sy]) => {
+      const guard = shadowed(mesh(roundedBoxGeo(0.08, 0.22, 0.28, 0.04), M.caseM, 'caseM'));
+      guard.position.set(0.96, sy * 0.16, -0.02);
+      guard.rotation.z = sy * 0.42; guard.rotation.x = sy * 0.1;
+      caseG.add(guard);
+    });
+  }
+
+  /* caseback (separate → detaches in exploded view) */
+  const backG = P('back', V3(0, 0, -0.95));
+  backG.add(shadowed(mesh(latheFrom([[0, -0.19], [0.4, -0.2], [0.66, -0.19], [0.86, -0.145]], seg), M.caseM, 'caseM')));
+
+  /* bezel */
+  const bezG = P('bezel', V3(0, 0, 1.05));
+  const bezProfile = [[0.66, 0.205], [0.905, 0.205], [0.905, 0.245], [0.88, 0.30], [0.66, 0.30]];
+  let bezBase;
+  if (model.bezel === 'fluted'){
+    bezBase = mesh(latheFrom([[0.66, 0.205], [0.90, 0.205], [0.90, 0.265], [0.875, 0.30], [0.66, 0.30]], seg), M.polish, 'polish');
+    fluteGeometry(bezBase.geometry, 0.016, 60);
+  } else if (model.bezel === 'gmt'){
+    bezBase = mesh(latheFrom(bezProfile, seg), M.polish, 'polish');
+  } else {
+    bezBase = mesh(latheFrom(bezProfile, seg), M.ceramic, 'ceramic');
+  }
+  bezG.add(shadowed(bezBase));
+  if (M.insertMap){
+    const ins = new THREE.Mesh(new THREE.RingGeometry(0.655, 0.875, seg),
+      new THREE.MeshStandardMaterial({ map:M.insertMap, transparent:true, roughness:0.24, metalness:0.15, envMapIntensity:1.1 }));
+    ins.position.z = 0.306; ins.userData.isInsert = true;
+    bezG.add(ins);
+  }
+  if (model.bezel === 'dive'){
+    const pip = mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.008, 16).rotateX(Math.PI / 2), M.lume, 'lume');
+    pip.position.set(0, 0.775, 0.312);
+    bezG.add(pip);
+  }
+
+  /* dial + applied indices */
+  const dialG = P('dial', V3(0, 0, 0.42));
+  const dial = mesh(new THREE.CircleGeometry(0.63, seg), M.dial, 'dial');
+  dial.position.z = 0.205;
+  dialG.add(dial);
+  for (let h = 1; h <= 12; h++){
+    if (h === 3 && model.cyclops) continue;
+    const a = (h / 12) * TAU;
+    const px = Math.sin(a) * 0.515, py = Math.cos(a) * 0.515;
+    let im;
+    if (h === 12){
+      const s = new THREE.Shape();
+      s.moveTo(0, -0.052); s.lineTo(0.06, 0.05); s.lineTo(-0.06, 0.05); s.closePath();
+      im = mesh(new THREE.ExtrudeGeometry(s, { depth:0.02, bevelEnabled:false }), M.hands, 'hands');
+    } else if (h === 6 || h === 9){
+      im = mesh(new THREE.BoxGeometry(0.035, 0.13, 0.02), M.hands, 'hands');
+    } else {
+      im = mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.02, 24).rotateX(Math.PI / 2), M.hands, 'hands');
+    }
+    im.position.set(px, py, 0.208); im.rotation.z = -a;
+    shadowed(im);
+    dialG.add(im);
+    const lume = mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.008, 12).rotateX(Math.PI / 2), M.lume, 'lume');
+    lume.position.set(px, py, 0.222);
+    dialG.add(lume);
+  }
+  if (model.subdials){
+    const subHand = new THREE.Group();
+    const sbar = mesh(new THREE.BoxGeometry(0.008, 0.095, 0.006), M.hands, 'hands');
+    sbar.position.y = 0.032; subHand.add(sbar);
+    subHand.add(mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.01, 12).rotateX(Math.PI / 2), M.hands, 'hands'));
+    subHand.position.set(-0.2646, 0, 0.215);
+    dialG.add(subHand);
+    hands.sub = subHand;
+  }
+
+  /* movement — gears, balance, rotor, jewels */
+  const movG = P('movement', V3(0, 0, 0.16));
+  const plate = mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.05, 48).rotateX(Math.PI / 2), M.dark, 'dark');
+  plate.position.z = 0.02;
+  movG.add(plate);
+  [[0.17, 0.11, 14, 0.16, 0.14, 0.062, 'gold'],
+   [0.12, 0.075, 11, -0.2, 0.02, 0.068, 'hands'],
+   [0.10, 0.06, 9, 0.02, -0.2, 0.074, 'gold']].forEach(([rO, rI, teeth, gx, gy, gz, matName]) => {
+    const gear = mesh(new THREE.ExtrudeGeometry(gearShape(rO, rI, teeth), { depth:0.018, bevelEnabled:false }), M[matName], matName);
+    gear.position.set(gx, gy, gz);
+    movG.add(gear); spinners.push({ o:gear, s:0.25 + teeth * 0.02 });
+    const jewel = mesh(new THREE.SphereGeometry(0.018, 10, 8), M.ruby, 'ruby');
+    jewel.position.set(gx, gy, gz + 0.022);
+    movG.add(jewel);
+  });
+  const bal = mesh(new THREE.TorusGeometry(0.1, 0.014, 10, 28), M.hands, 'hands');
+  bal.position.set(-0.02, 0.28, 0.06); movG.add(bal); spinners.push({ o:bal, s:0, osc:true });
+  const rotor = new THREE.Group();
+  const half = mesh(new THREE.CircleGeometry(0.52, 32, Math.PI, Math.PI), M.gold, 'gold');
+  half.position.z = -0.005;
+  rotor.add(half);
+  rotor.add(mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.03, 20).rotateX(Math.PI / 2), M.hands, 'hands'));
+  rotor.position.z = 0; rotor.rotation.z = 0.8;
+  movG.add(rotor); spinners.push({ o:rotor, s:0.35 });
+
+  /* hands (each its own explode layer) */
+  const hourG = P('hour', V3(0, 0, 0.60));
+  hands.h = mercedesHand(0.35, 0.075, 0.052, M); hands.h.position.z = 0.228; hourG.add(hands.h);
+  const minG = P('min', V3(0, 0, 0.74));
+  hands.m = mercedesHand(0.53, 0.062, 0.044, M); hands.m.position.z = 0.246; minG.add(hands.m);
+  const secG = P('sec', V3(0, 0, 0.88));
+  hands.s = secondHand(0.6, M); hands.s.position.z = 0.262; secG.add(hands.s);
+  if (model.gmt){
+    const gmtG = P('gmt', V3(0, 0, 0.67));
+    hands.gmt = gmtHand(M); hands.gmt.position.z = 0.237; gmtG.add(hands.gmt);
+  }
+
+  /* crystal + cyclops */
+  const cryG = P('crystal', V3(0, 0, 1.5));
+  const dome = mesh(latheFrom([[0, 0.10], [0.28, 0.096], [0.46, 0.078], [0.585, 0.042], [0.635, 0.004]], 64), M.crystal);
+  dome.position.z = 0.272; dome.renderOrder = 5;
+  cryG.add(dome);
+  if (model.cyclops){
+    const cyc = new THREE.Mesh(new THREE.SphereGeometry(0.105, 24, 14, 0, TAU, 0, Math.PI * 0.42), M.crystal);
+    cyc.geometry.rotateX(Math.PI / 2);
+    cyc.scale.z = 0.5;
+    cyc.position.set(0.37, 0, 0.318);
+    cyc.renderOrder = 6;
+    cryG.add(cyc);
+  }
+
+  /* bracelet */
+  const top = P('braceTop', V3(0, 0.8, 0.28), -0.55);
+  top.add(buildStrap(M, cfg, 1));
+  const bot = P('braceBot', V3(0, -0.8, 0.28), 0.55);
+  bot.add(buildStrap(M, cfg, -1));
+
+  root.userData = { spin, parts, hands, spinners, M, model, cfg:{...cfg}, cfgKey:{...cfg}, swapY:0 };
+  root.update = (now, t) => {
+    const ms = now.getMilliseconds(), s = now.getSeconds() + ms / 1000;
+    const m = now.getMinutes() + s / 60, h = (now.getHours() % 12) + m / 60;
+    hands.s.rotation.z = -(s / 60) * TAU;
+    hands.m.rotation.z = -(m / 60) * TAU;
+    hands.h.rotation.z = -(h / 12) * TAU;
+    if (hands.gmt){ hands.gmt.rotation.z = -((now.getUTCHours() + now.getUTCMinutes() / 60) / 24) * TAU; }
+    if (hands.sub){ hands.sub.rotation.z = -(s / 60) * TAU; }
+    spinners.forEach(sp => {
+      if (sp.osc) sp.o.rotation.z = Math.sin(t * 9) * 0.55;
+      else sp.o.rotation.z += sp.s * 0.016;
+    });
+  };
+  return root;
+}
+
+function applyExplode(w, k){
+  for (const name in w.userData.parts){
+    const p = w.userData.parts[name], u = p.userData;
+    p.position.set(u.off.x * k, u.off.y * k, u.off.z * k);
+    if (u.rot) p.rotation.x = u.rot * k;
+  }
+}
+
+function disposeWatch(w){
+  w.traverse(o => { if (o.geometry) o.geometry.dispose(); });
+  const mats = new Set();
+  w.traverse(o => { if (o.material) mats.add(o.material); });
+  mats.forEach(m => { if (m.map) m.map.dispose(); m.dispose(); });
+}
+
+/* ── Model swap with cinematic transition ── */
+let currentWatch = null, swapBusy = false, pendingSwap = null, flashSprite = null;
+function ensureFlash(){
+  if (flashSprite || !S3.ready) return;
+  const src = S3.glow && S3.glow[0] ? S3.glow[0].material.map : null;
+  if (!src) return;
+  flashSprite = new THREE.Sprite(new THREE.SpriteMaterial({ map:src, transparent:true, opacity:0, depthWrite:false, blending:THREE.AdditiveBlending }));
+  flashSprite.position.set(0, 0, 0.6);
+  flashSprite.renderOrder = 20;
+  S3.scene.add(flashSprite);
+}
+function swapWatch(model, cfg, opts){
+  opts = opts || {};
+  if (!S3.ready) return;
+  if (swapBusy){ pendingSwap = { model, cfg, opts }; return; }
+  const build = () => {
+    const w = buildWatch(model, cfg);
+    S3.watchHold.add(w);
+    currentWatch = w;
+    applyExplode(w, typeof view !== 'undefined' ? view.ex : 0);
+    if (HAS_GSAP && !REDUCED){
+      gsap.fromTo(w.scale, { x:0.6, y:0.6, z:0.6 }, { x:1, y:1, z:1, duration:opts.soft ? 0.5 : 0.85, ease:'power3.out' });
+      gsap.fromTo(w.userData, { swapY:opts.soft ? -0.7 : -2.4 }, { swapY:0, duration:opts.soft ? 0.5 : 1.1, ease:'power3.out' });
+      if (!opts.soft){
+        gsap.fromTo(w.userData.parts.bezel.rotation, { z:2.4 }, { z:0, duration:1.1, ease:'power3.out' });
+        ensureFlash();
+        if (flashSprite){
+          gsap.fromTo(flashSprite.scale, { x:0.4, y:0.4, z:1 }, { x:5.4, y:5.4, z:1, duration:0.8, ease:'power2.out' });
+          gsap.fromTo(flashSprite.material, { opacity:0.85 }, { opacity:0, duration:0.8, ease:'power2.out' });
+        }
+      }
+    }
+  };
+  const old = currentWatch;
+  if (old){
+    swapBusy = true;
+    const fin = () => {
+      S3.watchHold.remove(old);
+      disposeWatch(old);
+      build();
+      swapBusy = false;
+      if (pendingSwap){ const p = pendingSwap; pendingSwap = null; swapWatch(p.model, p.cfg, p.opts); }
+    };
+    if (HAS_GSAP && !REDUCED){
+      gsap.timeline({ onComplete:fin })
+        .to(old.userData, { swapY:'+=2.4', duration:0.45, ease:'power2.in' }, 0)
+        .to(old.scale, { x:0.6, y:0.6, z:0.6, duration:0.45, ease:'power2.in' }, 0);
+    } else fin();
+  } else build();
+}
+
+/* ── Live configurator — patch materials/textures/bracelet in place ── */
+const METAL_ROLES = ['caseM', 'polish', 'gold', 'hands', 'braceA', 'braceB'];
+function applyConfig(model, cfg, animate){
+  const w = currentWatch;
+  if (!w || w.userData.model.id !== model.id) return;
+  const k = w.userData.cfgKey, M = w.userData.M;
+  const soft = animate && HAS_GSAP && !REDUCED;
+  const flash = () => {
+    if (!soft) return;
+    ensureFlash();
+    if (flashSprite) gsap.fromTo(flashSprite.material, { opacity:0.3 }, { opacity:0, duration:0.6, ease:'power2.out' });
+  };
+
+  if (k.dial !== cfg.dial){
+    k.dial = cfg.dial;
+    const oldTex = M.dial.map;
+    M.dial.map = makeDialTexture(model, cfg);
+    M.dial.needsUpdate = true;
+    if (oldTex) oldTex.dispose();
+    flash();
+  }
+  if (k.bezel !== cfg.bezel){
+    k.bezel = cfg.bezel;
+    const set = BEZEL_SETS[model.bezel];
+    const opt = set.find(b => b.id === cfg.bezel) || set[0];
+    if (M.ceramic){
+      const c = new THREE.Color(opt.ceramic).convertSRGBToLinear();
+      if (soft) gsap.to(M.ceramic.color, { r:c.r, g:c.g, b:c.b, duration:0.6, ease:'power2.out' });
+      else M.ceramic.color.copy(c);
+    }
+    const bezG = w.userData.parts.bezel;
+    const oldIns = bezG.children.find(c => c.userData.isInsert);
+    if (oldIns){
+      bezG.remove(oldIns);
+      oldIns.geometry.dispose();
+      if (oldIns.material.map) oldIns.material.map.dispose();
+      oldIns.material.dispose();
+    }
+    if (model.bezel !== 'fluted'){
+      const tex = model.bezel === 'dive' ? makeDiveInsert(opt) : model.bezel === 'gmt' ? makeGMTInsert(opt) : makeTachyInsert(opt);
+      const ins = new THREE.Mesh(new THREE.RingGeometry(0.655, 0.875, IS_MOBILE ? 64 : 96),
+        new THREE.MeshStandardMaterial({ map:tex, transparent:true, roughness:0.24, metalness:0.15, envMapIntensity:1.1 }));
+      ins.position.z = 0.306; ins.userData.isInsert = true;
+      if (soft) gsap.fromTo(ins.material, { opacity:0 }, { opacity:1, duration:0.6, ease:'power2.out' });
+      bezG.add(ins);
+    }
+    flash();
+  }
+  if (k.metal !== cfg.metal){
+    k.metal = cfg.metal;
+    const newM = buildMaterials(model, { ...cfg });
+    const used = new Set();
+    w.traverse(o => {
+      const role = o.userData && o.userData.role;
+      if (role && METAL_ROLES.indexOf(role) !== -1 && newM[role]){
+        o.material = newM[role];
+        used.add(newM[role]);
+      }
+    });
+    const oldMats = new Set();
+    w.traverse(o => {
+      const role = o.userData && o.userData.role;
+      if (role && METAL_ROLES.indexOf(role) !== -1 && o.material && !used.has(o.material)) oldMats.add(o.material);
+    });
+    oldMats.forEach(m => m.dispose());
+    Object.keys(newM).forEach(key => {
+      const m = newM[key];
+      if (m && m.isMaterial && !used.has(m)){ if (m.map) m.map.dispose(); m.dispose(); }
+    });
+    flash();
+  }
+  if (k.bracelet !== cfg.bracelet){
+    k.bracelet = cfg.bracelet;
+    ['braceTop', 'braceBot'].forEach((name, i) => {
+      const part = w.userData.parts[name];
+      const olds = [];
+      part.traverse(o => olds.push(o));
+      part.clear();
+      olds.forEach(o => { if (o.geometry) o.geometry.dispose(); });
+      part.add(buildStrap(M, cfg, i === 0 ? 1 : -1));
+    });
+    flash();
+  }
+  w.userData.cfg = { ...cfg };
+}
+
+/* ════════════════════════════════════════════════════════════
+   06 · VIEW COMPOSITION, RENDER LOOP, INPUT, SCROLL STORY
+════════════════════════════════════════════════════════════ */
+const view = { camZ:6.6, wX:0, wY:0, wScale:1, rotY:-0.55, rotX:-0.10, ex:0 };
+const mouse = { x:0, y:0, tx:0, ty:0 };
+const drag  = { on:false, lastX:0, lastY:0, vel:0, y:0, pinch:0 };
+let spinAuto = 0, spinTarget = 0.22, introS = 0.001, introY = -0.55;
+let rafId = null, running = false, lastT = 0;
+
+function startLoop(){
+  if (running || !S3.ready || document.hidden) return;
+  running = true; lastT = performance.now();
+  rafId = requestAnimationFrame(tick);
+}
+function stopLoop(){
+  running = false;
+  if (rafId) cancelAnimationFrame(rafId);
+  rafId = null;
+}
+
+function tick(now){
+  rafId = requestAnimationFrame(tick);
+  const t = now / 1000;
+  const dt = Math.min(0.05, (now - lastT) / 1000);
+  lastT = now;
+  const w = currentWatch;
+
+  mouse.x += (mouse.tx - mouse.x) * 0.06;
+  mouse.y += (mouse.ty - mouse.y) * 0.06;
+  spinAuto += dt * spinTarget * (REDUCED ? 0 : 1);
+  if (!drag.on && Math.abs(drag.vel) > 0.0002){ drag.y += drag.vel; drag.vel *= 0.94; }
+
+  const rig = S3.watchRig, hold = S3.watchHold;
+  const bob = REDUCED ? 0 : Math.sin(t * 0.9) * 0.045;
+  rig.position.set(view.wX + mouse.x * 0.07, view.wY + mouse.y * 0.05 + bob + introY, 0);
+  rig.scale.setScalar(Math.max(0.001, view.wScale * introS));
+  hold.rotation.y = view.rotY + mouse.x * 0.16;
+  hold.rotation.x = view.rotX + mouse.y * 0.12;
+  S3.camera.position.set(0, 0, view.camZ + drag.pinch);
+  S3.camera.lookAt(0, 0, 0);
+
+  if (w){
+    w.userData.spin.rotation.y = spinAuto + drag.y + w.userData.swapY;
+    if (!swapBusy) w.userData.parts.bezel.rotation.z = Math.sin(t * 0.35) * 0.05;
+    applyExplode(w, view.ex);
+    w.update(new Date(), t);
+  }
+
+  if (S3.parts && !REDUCED){
+    const pos = S3.parts.geometry.attributes.position;
+    const spd = S3.parts.userData.spd;
+    for (let i = 0; i < spd.length; i++){
+      let py = pos.getY(i) + spd[i] * dt;
+      if (py > 3.4) py = -3.4;
+      pos.setY(i, py);
+      pos.setX(i, pos.getX(i) + Math.sin(t * 0.55 + i * 1.7) * 0.0006);
+    }
+    pos.needsUpdate = true;
+    S3.parts.rotation.y = t * 0.01;
+  }
+
+  S3.renderer.render(S3.scene, S3.camera);
+}
+
+/* ── pointer input: parallax, drag-to-rotate, pinch-to-zoom ── */
+function bindInput(){
+  if (FINE){
+    window.addEventListener('mousemove', e => {
+      mouse.tx = (e.clientX / window.innerWidth) * 2 - 1;
+      mouse.ty = (e.clientY / window.innerHeight) * 2 - 1;
+    }, { passive:true });
+  }
+  const zone = $('#dragZone');
+  if (!zone) return;
+  const ptrs = new Map();
+  let pinchD0 = 0, pinchZ0 = 0;
+  zone.addEventListener('pointerdown', e => {
+    zone.setPointerCapture(e.pointerId);
+    ptrs.set(e.pointerId, e);
+    if (ptrs.size === 1){ drag.on = true; drag.lastX = e.clientX; drag.lastY = e.clientY; drag.vel = 0; }
+    if (ptrs.size === 2){
+      const p = [...ptrs.values()];
+      pinchD0 = Math.hypot(p[0].clientX - p[1].clientX, p[0].clientY - p[1].clientY);
+      pinchZ0 = drag.pinch;
+    }
+  });
+  zone.addEventListener('pointermove', e => {
+    if (!ptrs.has(e.pointerId)) return;
+    ptrs.set(e.pointerId, e);
+    if (ptrs.size === 2 && pinchD0){
+      const p = [...ptrs.values()];
+      const d = Math.hypot(p[0].clientX - p[1].clientX, p[0].clientY - p[1].clientY);
+      drag.pinch = clamp(pinchZ0 - (d - pinchD0) * 0.008, -1.3, 1.7);
+      return;
+    }
+    if (!drag.on) return;
+    const dx = e.clientX - drag.lastX;
+    drag.lastX = e.clientX; drag.lastY = e.clientY;
+    drag.y += dx * 0.006;
+    drag.vel = dx * 0.006;
+  });
+  const up = e => {
+    ptrs.delete(e.pointerId);
+    if (ptrs.size < 2) pinchD0 = 0;
+    if (!ptrs.size) drag.on = false;
+  };
+  zone.addEventListener('pointerup', up);
+  zone.addEventListener('pointercancel', up);
+}
+
+/* ── scroll choreography (GSAP ScrollTrigger) ── */
+function initChoreography(){
+  if (!HAS_ST) return;
+  const desk = !IS_MOBILE;
+
+  gsap.to('#heroTitle', {
+    opacity:0, y:-90, ease:'none',
+    scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom 30%', scrub:true }
+  });
+
+  const stl = gsap.timeline({
+    defaults:{ ease:'none' },
+    scrollTrigger:{
+      trigger:'#story', start:'top bottom', end:'bottom bottom', scrub:1.1,
+      onUpdate:self => { const d = $('#railDot'); if (d) d.style.transform = 'translateY(' + (self.progress * 38) + 'vh)'; }
+    }
+  });
+  stl.to(view, { rotY:1.35, rotX:0.22, camZ:5.1 }, 0)
+     .to(view, { ex:1, camZ:4.45, rotY:2.6 }, 0.2)
+     .to(view, { rotY:3.7 }, 0.44)
+     .to(view, { ex:0, camZ:5.4, rotY:5.1 }, 0.6)
+     .to(view, { rotY:TAU, rotX:0, camZ:6.4 }, 0.84);
+
+  $$('.callout').forEach(el => {
+    gsap.fromTo(el, { opacity:0, y:70 }, {
+      opacity:1, y:0, duration:0.8, ease:'power3.out',
+      scrollTrigger:{ trigger:el, start:'top 82%', toggleActions:'play none none reverse' }
+    });
+  });
+
+  const pose = o => gsap.to(view, Object.assign({}, o, { duration:1.25, ease:'power3.inOut', overwrite:'auto' }));
+  const P_collection = desk ? { wX:-1.5, wY:0.05, wScale:0.95, camZ:6.2, rotX:0.04 } : { wX:0, wY:1.02, wScale:0.62, camZ:6.6, rotX:0.05 };
+  const P_config     = desk ? { wX:1.5, wY:0, wScale:1.06, camZ:5.9, rotX:-0.04 } : { wX:0, wY:1.05, wScale:0.6, camZ:6.6, rotX:-0.04 };
+  const P_craft      = desk ? { wX:0, wY:0, wScale:0.8, camZ:7.4, rotX:0.1 } : { wX:0, wY:1.1, wScale:0.5, camZ:7.2, rotX:0.1 };
+  const P_rest       = desk ? { wX:0, wY:0, wScale:0.7, camZ:7.8, rotX:0.06 } : { wX:0, wY:1.15, wScale:0.46, camZ:7.8, rotX:0.06 };
+  const mk = (sel, target) => ScrollTrigger.create({
+    trigger:sel, start:'top 62%', end:'bottom 38%',
+    onEnter:() => { spinTarget = 0.03; pose(Object.assign({}, target, { rotY:TAU })); },
+    onEnterBack:() => { spinTarget = 0.03; pose(Object.assign({}, target, { rotY:TAU })); }
+  });
+  mk('#collection', P_collection);
+  mk('#configurator', P_config);
+  mk('#craft', P_craft);
+  mk('#testimonials', P_rest);
+  mk('#boutiques', P_rest);
+
+  ScrollTrigger.create({
+    trigger:'#hero', start:'top top', end:'bottom 40%',
+    onEnterBack:() => {
+      spinTarget = REDUCED ? 0 : 0.22;
+      pose({ wX:0, wY:0, wScale:1, camZ:6.6, rotY:-0.55, rotX:-0.10 });
+    }
+  });
+  ScrollTrigger.create({
+    trigger:'#story', start:'top bottom', end:'bottom bottom',
+    onEnter:() => { spinTarget = REDUCED ? 0 : 0.34; },
+    onLeave:() => { spinTarget = 0.03; },
+    onEnterBack:() => { spinTarget = REDUCED ? 0 : 0.34; },
+    onLeaveBack:() => { spinTarget = REDUCED ? 0 : 0.22; }
+  });
+
+  ScrollTrigger.create({
+    trigger:'#footer', start:'top 85%',
+    onEnter:() => gsap.to('#gl', { opacity:0.16, duration:0.8 }),
+    onLeaveBack:() => gsap.to('#gl', { opacity:1, duration:0.8 })
+  });
+
+  ScrollTrigger.batch('.rv', {
+    start:'top 88%',
+    onEnter:b => gsap.to(b, { opacity:1, y:0, duration:0.9, stagger:0.09, ease:'power3.out', overwrite:true })
+  });
+
+  $$('.h2 .li').forEach(el => {
+    gsap.set(el, { yPercent:115 });
+    gsap.to(el, {
+      yPercent:0, duration:1.1, ease:'power4.out',
+      scrollTrigger:{ trigger:el, start:'top 88%', toggleActions:'play none none reverse' }
+    });
+  });
+
+  $$('.c-val').forEach(el => {
+    const to = parseFloat(el.getAttribute('data-to')) || 0;
+    ScrollTrigger.create({
+      trigger:el, start:'top 88%', once:true,
+      onEnter:() => {
+        const o = { v:0 };
+        gsap.to(o, { v:to, duration:1.8, ease:'power2.out', onUpdate:() => { el.textContent = String(Math.round(o.v)); } });
+      }
+    });
+  });
+
+  ['collection', 'configurator', 'craft', 'boutiques'].forEach(id => {
+    ScrollTrigger.create({
+      trigger:'#' + id, start:'top 55%', end:'bottom 45%',
+      onToggle:self => $$('.nav-links a').forEach(a => {
+        if (a.getAttribute('href') === '#' + id) a.classList.toggle('active', self.isActive);
+      })
+    });
+  });
+}
+
+/* ════════════════════════════════════════════════════════════
+   07 · UI — i18n, dynamic renders, cursor, magnetic, nav
+════════════════════════════════════════════════════════════ */
+let booted = false;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+
+function applyI18nStatic(){
+  $$('[data-i18n]').forEach(el => { el.innerHTML = t(el.getAttribute('data-i18n')); });
+  $$('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.getAttribute('data-i18n-ph')); });
+  $$('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria'))); });
+}
+
+function applyLanguage(lang){
+  state.lang = lang;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.body.classList.toggle('lang-ar', lang === 'ar');
+  $('#langBtn').textContent = lang === 'ar' ? 'EN' : 'العربية';
+  $('#langBtnM').textContent = lang === 'ar' ? 'EN' : 'العربية';
+  $('#cartBtn').setAttribute('aria-label', t('a11y.cart'));
+  applyI18nStatic();
+  renderCollection();
+  renderConfigurator();
+  renderBoutiques();
+  renderTestimonials();
+  renderCart();
+  updateHeroMeta();
+  updatePrices();
+  savePrefs();
+  if (booted){
+    requestAnimationFrame(() => {
+      $$('#collectionGrid .rv, #bGrid .rv, #tGrid .rv').forEach(el => {
+        if (HAS_GSAP) gsap.set(el, { opacity:1, y:0 });
+        else { el.style.opacity = '1'; el.style.transform = 'none'; }
+      });
+      if (HAS_ST) ScrollTrigger.refresh();
+    });
+  }
+}
+
+/* ── CSS mini watch helpers ── */
+function applyMiniVars(el, m){
+  const s = el.style;
+  s.setProperty('--bez', m.mini.bez);
+  s.setProperty('--bez2', m.mini.bez2 || m.mini.bez);
+  s.setProperty('--dial', m.mini.dial);
+  s.setProperty('--hands', m.mini.hands || '#d8d8dc');
+  s.setProperty('--accent', m.mini.accent || '#c9a961');
+  if (m.mini.sub) s.setProperty('--sub', m.mini.sub);
+  if (m.mini.half) s.background = 'conic-gradient(from -90deg, ' + m.mini.bez + ' 0deg 180deg, ' + m.mini.bez2 + ' 180deg 360deg)';
+}
+function updateMinis(){
+  const n = new Date();
+  const s = n.getSeconds() + n.getMilliseconds() / 1000;
+  const m = n.getMinutes() + s / 60;
+  const h = (n.getHours() % 12) + m / 60;
+  const ah = (h / 12) * 360, am = (m / 60) * 360, as = (s / 60) * 360;
+  $$('.mini').forEach(el => {
+    el.style.setProperty('--ah', ah + 'deg');
+    el.style.setProperty('--am', am + 'deg');
+    el.style.setProperty('--as', as + 'deg');
+  });
+}
+
+/* ── Collection ── */
+function renderCollection(){
+  const grid = $('#collectionGrid');
+  grid.innerHTML = '';
+  MODELS.forEach(m => {
+    const el = document.createElement('article');
+    el.className = 'w-card rv glass' + (m.id === state.activeModel ? ' active' : '');
+    el.dataset.model = m.id;
+    el.setAttribute('aria-label', m.name[state.lang]);
+    const mini = document.createElement('div');
+    mini.className = 'mini' + (m.mini.panda ? ' mini--panda' : '');
+    applyMiniVars(mini, m);
+    mini.innerHTML = '<i class="mh"></i><i class="mm"></i><i class="ms"></i>';
+    const info = document.createElement('div');
+    info.className = 'w-info';
+    info.innerHTML =
+      '<p class="w-ref">REF. ' + esc(m.ref) + '</p>' +
+      '<h3 class="w-name">' + esc(m.name[state.lang]) + '</h3>' +
+      '<p class="w-spec">' + esc(labelOf('metals', m.metal)) + ' · ' + esc(m.size) + ' · ' + esc(m.water) + '</p>' +
+      '<p class="w-price" data-usd="' + m.basePrice + '"></p>';
+    const actions = document.createElement('div');
+    actions.className = 'w-actions';
+    const viewBtn = document.createElement('button');
+    viewBtn.className = 'btn w-view';
+    viewBtn.textContent = t('card.cta');
+    const addBtn = document.createElement('button');
+    addBtn.className = 'w-add';
+    addBtn.setAttribute('aria-label', t('card.add'));
+    addBtn.innerHTML = '<svg viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.6" fill="none" aria-hidden="true"><path d="M7 1v12M1 7h12"/></svg>';
+    actions.append(viewBtn, addBtn);
+    el.append(mini, info, actions);
+    el.addEventListener('click', () => selectModel(m.id));
+    viewBtn.addEventListener('click', e => { e.stopPropagation(); selectModel(m.id); });
+    addBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      addToCart(m.id, { dial:m.dial === 'panda' ? 'ivoire' : m.dial, bezel:BEZEL_SETS[m.bezel][0].id, metal:m.metal, bracelet:m.bracelet }, true);
+    });
+    grid.appendChild(el);
+  });
+  updatePrices();
+}
+
+function selectModel(id){
+  const m = modelById(id);
+  if (state.activeModel === id) return;
+  state.activeModel = id;
+  state.cfg = { dial:m.dial === 'panda' ? 'ivoire' : m.dial, bezel:BEZEL_SETS[m.bezel][0].id, metal:m.metal, bracelet:m.bracelet };
+  $$('.w-card').forEach(c => c.classList.toggle('active', c.dataset.model === id));
+  swapWatch(m, Object.assign({}, state.cfg), {});
+  renderConfigurator();
+  updateHeroMeta();
+  writeHashConfig();
+  savePrefs();
+}
+
+function updateHeroMeta(){
+  const m = modelById(state.activeModel);
+  $('#heroModelName').textContent = m.name[state.lang];
+  $('#heroModelPrice').textContent = t('hero.from') + ' ' + fmtPrice(m.basePrice);
+  $('#cfgName').textContent = m.name[state.lang];
+  $('#cfgRef').textContent = 'REF. ' + m.ref;
+}
+
+/* ── Configurator ── */
+function chipGroup(container, list, active, render, onPick){
+  container.innerHTML = '';
+  list.forEach(opt => {
+    const b = document.createElement('button');
+    b.className = 'chip';
+    b.setAttribute('aria-pressed', String(opt.id === active));
+    b.innerHTML = render(opt.id);
+    b.addEventListener('click', () => onPick(opt.id));
+    container.appendChild(b);
+  });
+}
+function renderConfigurator(){
+  const m = modelById(state.activeModel);
+  chipGroup($('#optMetal'), METALS, state.cfg.metal,
+    id => '<span>' + esc(labelOf('metals', id)) + '</span>',
+    id => { state.cfg.metal = id; onCfgChange(); });
+  chipGroup($('#optDial'), DIALS, state.cfg.dial,
+    id => '<i class="sw" style="background:' + dialById(id).hex + '"></i><span>' + esc(labelOf('dials', id)) + '</span>',
+    id => { state.cfg.dial = id; onCfgChange(); });
+  const set = BEZEL_SETS[m.bezel];
+  chipGroup($('#optBezel'), set, state.cfg.bezel,
+    id => {
+      const o = set.find(x => x.id === id);
+      const col = o.ceramic || o.a || '#c9a961';
+      return '<i class="sw" style="background:' + col + '"></i><span>' + esc(labelOf('bezels', id)) + '</span>';
+    },
+    id => { state.cfg.bezel = id; onCfgChange(); });
+  chipGroup($('#optBracelet'), BRACELETS, state.cfg.bracelet,
+    id => '<span>' + esc(labelOf('bracelets', id)) + '</span>',
+    id => { state.cfg.bracelet = id; onCfgChange(); });
+  $('#lblMetal').textContent = labelOf('metals', state.cfg.metal);
+  $('#lblDial').textContent = labelOf('dials', state.cfg.dial);
+  $('#lblBezel').textContent = labelOf('bezels', state.cfg.bezel);
+  $('#lblBracelet').textContent = labelOf('bracelets', state.cfg.bracelet);
+  updateCfgPrice();
+  updateCfgMini();
+}
+function onCfgChange(){
+  applyConfig(modelById(state.activeModel), state.cfg, true);
+  renderConfigurator();
+  writeHashConfig();
+}
+let priceAnim = null;
+function updateCfgPrice(){
+  const m = modelById(state.activeModel);
+  const price = configPrice(m, state.cfg);
+  const el = $('#cfgPrice');
+  const from = el.dataset.usd ? parseFloat(el.dataset.usd) : price;
+  el.dataset.usd = String(price);
+  if (HAS_GSAP && !REDUCED && Math.abs(from - price) > 0.5){
+    if (priceAnim) priceAnim.kill();
+    const o = { v:from };
+    priceAnim = gsap.to(o, { v:price, duration:0.7, ease:'power2.out', onUpdate:() => { el.textContent = fmtPrice(o.v); } });
+  } else {
+    el.textContent = fmtPrice(price);
+  }
+}
+function updateCfgMini(){
+  const m = modelById(state.activeModel);
+  const el = $('#cfgMini');
+  el.className = 'mini mini--lg' + (m.subdials ? ' mini--panda' : '');
+  const d = dialById(state.cfg.dial);
+  const set = BEZEL_SETS[m.bezel];
+  const bz = set.find(b => b.id === state.cfg.bezel) || set[0];
+  const gold = state.cfg.metal !== 'steel';
+  el.style.setProperty('--dial', d.hex);
+  el.style.setProperty('--hands', gold ? '#e2b96b' : '#d9dade');
+  el.style.setProperty('--accent', gold ? '#c9a961' : '#8f8f96');
+  if (m.subdials) el.style.setProperty('--sub', '#141419');
+  if (m.bezel === 'gmt'){
+    el.style.background = 'conic-gradient(from -90deg, ' + bz.a + ' 0deg 180deg, ' + bz.b + ' 180deg 360deg)';
+  } else {
+    el.style.background = '';
+    const bez = m.bezel === 'fluted' ? (gold ? '#e0bd6d' : '#d9dadd') : bz.ceramic;
+    const bez2 = m.bezel === 'fluted' ? (gold ? '#c9a052' : '#b9bac0') : bz.ceramic;
+    el.style.setProperty('--bez', bez);
+    el.style.setProperty('--bez2', bez2);
+  }
+}
+
+/* ── Boutiques & testimonials ── */
+function renderBoutiques(){
+  const g = $('#bGrid');
+  g.innerHTML = '';
+  BOUTIQUES.forEach((b, i) => {
+    const el = document.createElement('div');
+    el.className = 'b-card rv';
+    el.innerHTML =
+      '<h3>' + esc(b.city[state.lang]) + '<i>0' + (i + 1) + '</i></h3>' +
+      '<p class="b-addr">' + esc(b.addr) + '</p>' +
+      '<p class="b-hours">' + esc(b.hours) + '</p>' +
+      '<button class="link b-book">' + esc(t('boutiques.book')) + '</button>';
+    el.querySelector('.b-book').addEventListener('click', () => toast(t('toast.appointment')));
+    g.appendChild(el);
+  });
+}
+function renderTestimonials(){
+  const g = $('#tGrid');
+  g.innerHTML = '';
+  [1, 2, 3].forEach(i => {
+    const el = document.createElement('figure');
+    el.className = 't-card rv glass';
+    el.innerHTML =
+      '<div class="t-stars" aria-hidden="true">★ ★ ★ ★ ★</div>' +
+      '<blockquote>' + esc(t('testi.' + i + 'q')) + '</blockquote>' +
+      '<figcaption>' + esc(t('testi.' + i + 'a')) + ' — <span>' + esc(t('testi.' + i + 'c')) + '</span></figcaption>';
+    g.appendChild(el);
+  });
+}
+
+/* ── Toast ── */
+let toastT = null;
+function toast(msg){
+  const el = $('#toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastT);
+  toastT = setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+/* ── Custom cursor ── */
+function initCursor(){
+  if (!FINE || IS_TOUCH) return;
+  document.documentElement.classList.add('has-cursor');
+  const dot = $('#cursorDot'), ring = $('#cursorRing');
+  let x = window.innerWidth / 2, y = window.innerHeight / 2, rx = x, ry = y;
+  window.addEventListener('mousemove', e => {
+    x = e.clientX; y = e.clientY;
+    dot.style.opacity = '1'; ring.style.opacity = '1';
+  }, { passive:true });
+  window.addEventListener('mousedown', () => ring.classList.add('is-down'));
+  window.addEventListener('mouseup', () => ring.classList.remove('is-down'));
+  document.addEventListener('mouseover', e => {
+    ring.classList.toggle('is-hover', !!(e.target.closest && e.target.closest('a,button,select,input,.w-card,label')));
+  });
+  (function loop(){
+    rx += (x - rx) * 0.16; ry += (y - ry) * 0.16;
+    dot.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+    ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)';
+    requestAnimationFrame(loop);
+  })();
+}
+
+/* ── Magnetic buttons ── */
+function initMagnetic(){
+  if (!FINE || REDUCED || !HAS_GSAP) return;
+  $$('.magnetic').forEach(el => {
+    const qx = gsap.quickTo(el, 'x', { duration:0.4, ease:'power3' });
+    const qy = gsap.quickTo(el, 'y', { duration:0.4, ease:'power3' });
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      qx((e.clientX - r.left - r.width / 2) * 0.28);
+      qy((e.clientY - r.top - r.height / 2) * 0.28);
+    });
+    el.addEventListener('mouseleave', () => { qx(0); qy(0); });
+  });
+}
+
+/* ── Nav, menu, theme, language, currency ── */
+function toggleMenu(){
+  const mm = $('#mobileMenu'), b = $('#burger');
+  const open = !mm.classList.contains('open');
+  mm.classList.toggle('open', open);
+  b.classList.toggle('open', open);
+  b.setAttribute('aria-expanded', String(open));
+  mm.setAttribute('aria-hidden', String(!open));
+  document.body.classList.toggle('lock', open);
+}
+function closeMenu(){
+  if ($('#mobileMenu').classList.contains('open')) toggleMenu();
+}
+function setTheme(th){
+  state.theme = th;
+  document.documentElement.dataset.theme = th;
+  if (S3.parts) S3.parts.material.opacity = th === 'light' ? 0.3 : 0.5;
+  if (S3.glow) S3.glow.forEach((s, i) => { s.material.opacity = (th === 'light' ? [0.16, 0.07, 0.05] : [0.55, 0.22, 0.16])[i]; });
+  savePrefs();
+}
+function initNav(){
+  $$('[data-scroll]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (!href || href.charAt(0) !== '#') return;
+      const el = $(href);
+      if (!el) return;
+      e.preventDefault();
+      closeMenu();
+      Smooth.scrollTo(el.getBoundingClientRect().top + window.scrollY - 8);
+    });
+  });
+  $$('[data-goto]').forEach(b => b.addEventListener('click', () => {
+    const el = $(b.getAttribute('data-goto'));
+    closeCart();
+    if (el) Smooth.scrollTo(el.getBoundingClientRect().top + window.scrollY - 8);
+  }));
+  $$('[data-toast]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    toast(t(a.getAttribute('data-toast')));
+  }));
+  const nav = $('#nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+  $('#burger').addEventListener('click', toggleMenu);
+  $('#themeBtn').addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
+  $('#themeBtnM').addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
+  const flip = () => applyLanguage(state.lang === 'ar' ? 'en' : 'ar');
+  $('#langBtn').addEventListener('click', flip);
+  $('#langBtnM').addEventListener('click', flip);
+  const sel = $('#currencySel');
+  sel.value = state.currency;
+  sel.addEventListener('change', () => {
+    state.currency = sel.value;
+    savePrefs();
+    updatePrices();
+    renderCart();
+    updateHeroMeta();
+    renderConfigurator();
+  });
+}
+
+/* ── Global price sync ── */
+function updatePrices(){
+  $$('[data-usd]').forEach(el => { el.textContent = fmtPrice(parseFloat(el.getAttribute('data-usd'))); });
+  updateCfgPrice();
+}
+
+/* ── Newsletter ── */
+function initNewsletter(){
+  $('#newsForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const input = $('#newsEmail');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim())){
+      toast(t('toast.errorEmail'));
+      input.focus();
+      return;
+    }
+    /* Honest local ledger (demo keeps data on-device; production swaps this for an API call) */
+    const email = input.value.trim().toLowerCase();
+    try{
+      const list = store.get('aurelia:subscribers') || [];
+      if (Array.isArray(list) && list.indexOf(email) === -1){
+        list.push(email);
+        store.set('aurelia:subscribers', list.slice(-200));
+      }
+    }catch(err){ /* private mode */ }
+    input.value = '';
+    toast(t('toast.subscribed'));
+  });
+}
+
+/* ════════════════════════════════════════════════════════════
+   08 · CART, CHECKOUT, PRELOADER, BOOT
+════════════════════════════════════════════════════════════ */
+function cartKey(modelId, cfg){
+  return [modelId, cfg.dial, cfg.bezel, cfg.metal, cfg.bracelet].join('|');
+}
+function addToCart(modelId, cfg, announce){
+  const m = modelById(modelId);
+  const key = cartKey(modelId, cfg);
+  const found = state.cart.find(it => it.key === key);
+  if (found) found.qty = Math.min(9, found.qty + 1);
+  else state.cart.push({ key, modelId, cfg:Object.assign({}, cfg), unitPrice:configPrice(m, cfg), qty:1 });
+  store.set('aurelia:cart', state.cart);
+  renderCart();
+  if (announce) toast(t('toast.added'));
+  const badge = $('#cartCount');
+  badge.classList.remove('pulse');
+  void badge.offsetWidth;
+  badge.classList.add('pulse');
+}
+function changeQty(key, d){
+  const it = state.cart.find(x => x.key === key);
+  if (!it) return;
+  it.qty = clamp(it.qty + d, 1, 9);
+  store.set('aurelia:cart', state.cart);
+  renderCart();
+}
+function renderCart(){
+  const list = $('#cartItems'), empty = $('#cartEmpty'), foot = $('#cartFoot');
+  list.innerHTML = '';
+  const has = state.cart.length > 0;
+  empty.style.display = has ? 'none' : 'flex';
+  foot.style.display = has ? 'flex' : 'none';
+  state.cart.forEach(it => {
+    const m = modelById(it.modelId);
+    const li = document.createElement('li');
+    li.className = 'cart-row';
+    const mini = document.createElement('div');
+    mini.className = 'mini mini--sm';
+    applyMiniVars(mini, m);
+    li.appendChild(mini);
+    const info = document.createElement('div');
+    info.className = 'cr-info';
+    info.innerHTML =
+      '<b>' + esc(m.name[state.lang]) + '</b>' +
+      '<small>' + esc(labelOf('dials', it.cfg.dial)) + ' · ' + esc(labelOf('metals', it.cfg.metal)) + ' · ' + esc(labelOf('bracelets', it.cfg.bracelet)) + '</small>' +
+      '<span class="cr-price" data-usd="' + it.unitPrice + '">' + fmtPrice(it.unitPrice) + '</span>';
+    const qty = document.createElement('div');
+    qty.className = 'cr-qty';
+    qty.setAttribute('role', 'group');
+    qty.setAttribute('aria-label', t('cart.qty'));
+    const minus = document.createElement('button');
+    minus.textContent = '−'; minus.setAttribute('aria-label', 'minus');
+    const num = document.createElement('span');
+    num.textContent = String(it.qty);
+    const plus = document.createElement('button');
+    plus.textContent = '+'; plus.setAttribute('aria-label', 'plus');
+    minus.addEventListener('click', () => changeQty(it.key, -1));
+    plus.addEventListener('click', () => changeQty(it.key, 1));
+    qty.append(minus, num, plus);
+    info.appendChild(qty);
+    li.appendChild(info);
+    const rm = document.createElement('button');
+    rm.className = 'cr-remove';
+    rm.textContent = t('cart.remove');
+    rm.addEventListener('click', () => {
+      state.cart = state.cart.filter(x => x.key !== it.key);
+      store.set('aurelia:cart', state.cart);
+      renderCart();
+    });
+    li.appendChild(rm);
+    list.appendChild(li);
+  });
+  $('#cartTotal').textContent = fmtPrice(state.cart.reduce((a, it) => a + it.qty * it.unitPrice, 0));
+  const n = state.cart.reduce((a, it) => a + it.qty, 0);
+  const badge = $('#cartCount');
+  badge.textContent = String(n);
+  badge.classList.toggle('show', n > 0);
+}
+function openCart(){
+  $('#cartDrawer').classList.add('open');
+  $('#cartBackdrop').classList.add('open');
+  $('#cartDrawer').setAttribute('aria-hidden', 'false');
+  document.body.classList.add('lock');
+  $('#cartClose').focus();
+}
+function closeCart(){
+  $('#cartDrawer').classList.remove('open');
+  $('#cartBackdrop').classList.remove('open');
+  $('#cartDrawer').setAttribute('aria-hidden', 'true');
+  if (!$('#mobileMenu').classList.contains('open')) document.body.classList.remove('lock');
+}
+function openCheckout(){
+  if (!state.cart.length) return;
+  closeCart();
+  $('#checkoutBody').hidden = false;
+  $('#orderSuccess').hidden = true;
+  $('#checkoutModal').classList.add('open');
+  $('#checkoutModal').setAttribute('aria-hidden', 'false');
+  document.body.classList.add('lock');
+  setTimeout(() => { try { $('#fName').focus(); } catch(e){} }, 380);
+}
+function closeCheckout(){
+  $('#checkoutModal').classList.remove('open');
+  $('#checkoutModal').setAttribute('aria-hidden', 'true');
+  if (!$('#mobileMenu').classList.contains('open')) document.body.classList.remove('lock');
+}
+function initCheckout(){
+  $('#cartBtn').addEventListener('click', openCart);
+  $('#cartClose').addEventListener('click', closeCart);
+  $('#cartBackdrop').addEventListener('click', closeCart);
+  $('#checkoutBtn').addEventListener('click', openCheckout);
+  $('#checkoutClose').addEventListener('click', closeCheckout);
+  $('#successClose').addEventListener('click', closeCheckout);
+  $('#checkoutModal').addEventListener('click', e => { if (e.target === $('#checkoutModal')) closeCheckout(); });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if ($('#checkoutModal').classList.contains('open')) closeCheckout();
+    else if ($('#cartDrawer').classList.contains('open')) closeCart();
+    else closeMenu();
+  });
+  $('#checkoutForm').addEventListener('submit', e => {
+    e.preventDefault();
+    let ok = true;
+    ['#fName', '#fEmail', '#fPhone', '#fCity', '#fAddr'].forEach(id => {
+      const el = $(id);
+      let valid = el.value.trim().length > 1;
+      if (id === '#fEmail') valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim());
+      el.classList.toggle('err', !valid);
+      if (!valid) ok = false;
+    });
+    if (!ok) return;
+    /* Simulated payment ledger — no card data exists anywhere in this flow */
+    const btn = $('#checkoutForm').querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.style.opacity = '.55';
+    toast(t('checkout.simulating'));
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.style.opacity = '';
+      $('#orderNo').textContent = '#AUR-' + String(Math.floor(100000 + Math.random() * 900000));
+      $('#checkoutBody').hidden = true;
+      $('#orderSuccess').hidden = false;
+      state.cart = [];
+      store.set('aurelia:cart', state.cart);
+      renderCart();
+    }, 900);
+  });
+}
+
+/* ── Preloader ── */
+const PRE_C = 339.3;
+function runPreloader(ready){
+  const pct = $('#prePct'), fg = $('.pr-fg');
+  const o = { v:0 };
+  let done = false;
+  const paint = () => {
+    pct.textContent = String(Math.round(o.v));
+    fg.style.strokeDashoffset = String(PRE_C * (1 - o.v / 100));
+  };
+  const finish = () => {
+    if (done) return;
+    done = true;
+    gsap.killTweensOf(o);
+    gsap.timeline()
+      .to(o, { v:100, duration:0.4, ease:'power1.out', onUpdate:paint })
+      .to('.pre-inner', { opacity:0, scale:1.05, duration:0.5, ease:'power2.in' }, '+=0.12')
+      .add(() => { $('#preloader').classList.add('done'); reveal(); }, '-=0.12');
+  };
+  gsap.to('.pre-crown', { opacity:1, duration:1, delay:0.15 });
+  gsap.to(o, { v:88, duration:1.9, ease:'power2.inOut', onUpdate:paint });
+  ready.then(finish);
+  setTimeout(finish, 6000);
+}
+
+/* ── Reveal after preloader ── */
+function reveal(){
+  booted = true;
+  $('#gl').classList.add('on');
+  startLoop();
+  if (HAS_GSAP && !REDUCED){
+    const io = { s:0.001, y:-0.55 };
+    gsap.to(io, { s:1, y:0, duration:1.7, ease:'power3.out', onUpdate:() => { introS = io.s; introY = io.y; } });
+    gsap.timeline({ delay:0.1 })
+      .fromTo('#heroTitle .li', { yPercent:115 }, { yPercent:0, duration:1.2, stagger:0.12, ease:'power4.out' })
+      .fromTo('#nav', { y:-70, opacity:0 }, { y:0, opacity:1, duration:0.9, ease:'power3.out' }, 0.15)
+      .fromTo('.hero-ui .rv', { opacity:0, y:30 }, { opacity:1, y:0, duration:0.9, stagger:0.1, ease:'power3.out', clearProps:'transform' }, 0.4);
+  } else {
+    introS = 1; introY = 0;
+    $$('#heroTitle .li').forEach(el => { el.style.transform = 'none'; });
+    $$('.hero-ui .rv').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+  }
+  if (HAS_ST) ScrollTrigger.refresh();
+}
+
+/* ── Boot ── */
+let resizeT = null;
+async function boot(){
+  loadPrefs();
+  /* Shared URL configuration beats saved prefs; otherwise keep cfg coherent with the active model (works with 3D disabled too) */
+  if (!readHashConfig()){
+    const m0 = modelById(state.activeModel);
+    state.cfg = { dial: m0.dial === 'panda' ? 'ivoire' : m0.dial, bezel: BEZEL_SETS[m0.bezel][0].id, metal: m0.metal, bracelet: m0.bracelet };
+  }
+  refreshRates();
+  document.documentElement.dataset.theme = state.theme;
+  if (!HAS_GSAP || !HAS_ST) document.documentElement.classList.add('no-anim');
+  if (HAS_GSAP && REDUCED) gsap.globalTimeline.timeScale(60);
+
+  applyLanguage(state.lang);
+  initNav();
+  initCursor();
+  initMagnetic();
+  initNewsletter();
+  initCheckout();
+  bindInput();
+  Smooth.init();
+
+  const ready = (async () => {
+    try {
+      await Promise.race([
+        document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve(),
+        new Promise(r => setTimeout(r, 2500)),
+      ]);
+    } catch(e){ /* fonts optional */ }
+    if (CAN_3D){
+      const ok = initThree();
+      document.documentElement.classList.toggle('no-webgl', !ok);
+      if (ok){
+        ensureRig();
+        const m = modelById(state.activeModel);
+        swapWatch(m, Object.assign({}, state.cfg), { soft:true });
+        try { S3.renderer.render(S3.scene, S3.camera); } catch(e){}
+      }
+    } else {
+      document.documentElement.classList.add('no-webgl');
+    }
+  })();
+
+  if (HAS_GSAP && !REDUCED) runPreloader(ready);
+  else { $('#preloader').classList.add('done'); reveal(); }
+
+  if (HAS_ST) initChoreography();
+
+  window.addEventListener('resize', () => {
+    refreshViewportEnv();
+    resizeThree();
+    clearTimeout(resizeT);
+    resizeT = setTimeout(() => { if (HAS_ST) ScrollTrigger.refresh(); }, 200);
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopLoop();
+    else startLoop();
+  });
+  setInterval(updateMinis, 1000);
+  updateMinis();
+}
+/* lightweight diagnostics (console-free environments / QA) */
+window.addEventListener('error', e => { (window.__aureliaErrors = window.__aureliaErrors || []).push(String(e.message || e)); });
+window.addEventListener('unhandledrejection', e => {
+  (window.__aureliaErrors = window.__aureliaErrors || []).push('promise: ' + ((e.reason && e.reason.message) || e.reason) + (e.reason && e.reason.stack ? ' :: ' + String(e.reason.stack).slice(0, 500) : ''));
+});
+window.AURELIA = {
+  state, view,
+  three:() => S3.ready,
+  watch:() => !!(currentWatch && currentWatch.parent),
+  errors:() => window.__aureliaErrors || [],
+};
+
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+else boot();
+
+})();
+</script>
+</body>
+</html>
