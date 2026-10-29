@@ -5,3 +5,6 @@ next-env.d.ts
 .env
 .DS_Store
 Thumbs.db
+
+.vercel
+.env*
